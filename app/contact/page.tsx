@@ -1,6 +1,9 @@
 'use client';
 
 import { useState } from 'react';
+import { MdLocationOn, MdEmail, MdPhone, MdLanguage } from 'react-icons/md';
+import { FaWhatsapp } from 'react-icons/fa';
+import { HiLightningBolt } from 'react-icons/hi';
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -203,7 +206,9 @@ export default function ContactPage() {
               <h2 className="text-3xl font-bold text-gray-900 mb-6">Contact Information</h2>
               <div className="space-y-6">
                 <div className="flex items-start">
-                  <div className="text-2xl mr-4">📍</div>
+                  <div className="text-2xl mr-4 text-primary-600">
+                    <MdLocationOn />
+                  </div>
                   <div>
                     <h3 className="font-semibold text-gray-900 mb-1">Address</h3>
                     <p className="text-gray-600">
@@ -214,7 +219,9 @@ export default function ContactPage() {
                 </div>
 
                 <div className="flex items-start">
-                  <div className="text-2xl mr-4">📧</div>
+                  <div className="text-2xl mr-4 text-primary-600">
+                    <MdEmail />
+                  </div>
                   <div>
                     <h3 className="font-semibold text-gray-900 mb-1">Email</h3>
                     <p className="text-gray-600">
@@ -236,7 +243,9 @@ export default function ContactPage() {
                 </div>
 
                 <div className="flex items-start">
-                  <div className="text-2xl mr-4">📞</div>
+                  <div className="text-2xl mr-4 text-primary-600">
+                    <MdPhone />
+                  </div>
                   <div>
                     <h3 className="font-semibold text-gray-900 mb-1">Phone</h3>
                     <p className="text-gray-600 mb-2">
@@ -258,7 +267,9 @@ export default function ContactPage() {
                 </div>
 
                 <div className="flex items-start">
-                  <div className="text-2xl mr-4">💬</div>
+                  <div className="text-2xl mr-4 text-green-600">
+                    <FaWhatsapp />
+                  </div>
                   <div>
                     <h3 className="font-semibold text-gray-900 mb-2">WhatsApp</h3>
                     <div className="space-y-2">
@@ -268,7 +279,7 @@ export default function ContactPage() {
                         rel="noopener noreferrer"
                         className="inline-flex items-center bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-lg transition-colors text-sm"
                       >
-                        <span className="mr-2">💬</span>
+                        <FaWhatsapp className="mr-2" />
                         Chat (+61 466 841 679)
                       </a>
                       <br />
@@ -278,7 +289,7 @@ export default function ContactPage() {
                         rel="noopener noreferrer"
                         className="inline-flex items-center bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-lg transition-colors text-sm"
                       >
-                        <span className="mr-2">💬</span>
+                        <FaWhatsapp className="mr-2" />
                         Chat (+61 480 568 555)
                       </a>
                     </div>
@@ -286,7 +297,9 @@ export default function ContactPage() {
                 </div>
 
                 <div className="flex items-start">
-                  <div className="text-2xl mr-4">🌐</div>
+                  <div className="text-2xl mr-4 text-primary-600">
+                    <MdLanguage />
+                  </div>
                   <div>
                     <h3 className="font-semibold text-gray-900 mb-1">Website</h3>
                     <p className="text-gray-600">
@@ -305,7 +318,7 @@ export default function ContactPage() {
 
               <div className="mt-8 p-6 bg-gradient-to-br from-accent-50 to-accent-100/50 rounded-xl border border-accent-200 glass-card">
                 <h3 className="font-semibold text-gray-900 mb-3 flex items-center">
-                  <span className="text-accent-600 mr-2">⚡</span>
+                  <HiLightningBolt className="text-accent-600 mr-2" />
                   Quick Response
                 </h3>
                 <p className="text-gray-600">
