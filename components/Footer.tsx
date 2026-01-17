@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import { FaEnvelope, FaPhone, FaMapMarkerAlt, FaComments, FaGlobe } from 'react-icons/fa';
 import ContactModal from '@/components/ContactModal';
@@ -12,9 +13,15 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Company Info */}
           <div className="lg:col-span-2">
-            <h3 className="text-2xl font-bold bg-gradient-to-r from-primary-400 to-accent-400 bg-clip-text text-transparent mb-4">
-              Solutions Merchant Investments
-            </h3>
+            <Link href="/" className="flex items-center gap-2 mb-4 hover:opacity-80 transition-opacity inline-block">
+              <Image
+                src="/smslog.png"
+                alt="Solutions Merchant Investments Logo"
+                width={50}
+                height={50}
+                className="object-contain"
+              />
+            </Link>
             <p className="text-gray-300 mb-6 leading-relaxed">
               A diversified, solutions-oriented enterprise specializing in wholesale, retail, 
               hardware supply, logistics, and multi-sector business solutions across Zimbabwe 
