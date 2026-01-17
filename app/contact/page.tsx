@@ -4,6 +4,8 @@ import { useState } from 'react';
 import { MdLocationOn, MdEmail, MdPhone, MdLanguage } from 'react-icons/md';
 import { FaWhatsapp } from 'react-icons/fa';
 import { HiLightningBolt } from 'react-icons/hi';
+
+export default function ContactPage() {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -355,4 +357,5 @@ import { HiLightningBolt } from 'react-icons/hi';
       </section>
     </div>
   );
+}
 }
