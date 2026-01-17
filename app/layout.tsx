@@ -1,14 +1,17 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
-const inter = Inter({ subsets: ["latin"] });
-
 export const metadata: Metadata = {
-  title: "Solutions Merchants - Your Trusted Business Partner",
-  description: "Delivering innovative solutions and exceptional services to drive your business forward.",
+  title: "Solutions Merchant Investments - Wholesale, Retail & Business Solutions",
+  description: "Leading broking company delivering reliable wholesale, retail, hardware supply, logistics, and multi-sector business solutions across Zimbabwe and international markets.",
+  keywords: "wholesale Zimbabwe, hardware supply, commodity broking, logistics, supply chain management, real estate Zimbabwe, bulk trading",
+  openGraph: {
+    title: "Solutions Merchant Investments",
+    description: "Trusted partner for wholesale, retail, hardware supply, and business solutions",
+    type: "website",
+  },
 };
 
 export default function RootLayout({
@@ -18,7 +21,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className="font-sans antialiased">
         <Header />
         <main className="min-h-screen">
           {children}

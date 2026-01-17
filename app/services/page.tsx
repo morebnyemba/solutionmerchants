@@ -1,70 +1,103 @@
 export default function ServicesPage() {
   const services = [
     {
-      title: 'Digital Transformation',
-      description: 'Transform your business with cutting-edge digital solutions and strategies.',
+      title: 'General Wholesale & Retail',
+      description: 'Bulk procurement and distribution of goods, retail and wholesale supply to businesses, institutions, and contractors. Import and export of general merchandise.',
       features: [
-        'Digital Strategy Development',
-        'Process Automation',
-        'Legacy System Modernization',
-        'Change Management',
+        'Bulk procurement and distribution',
+        'Retail and wholesale supply',
+        'Import and export services',
+        'Supply to contractors and institutions',
       ],
-      icon: '🚀',
+      icon: '🏪',
     },
     {
-      title: 'IT Consulting',
-      description: 'Expert guidance to optimize your technology infrastructure and processes.',
+      title: 'Hardware Wholesale',
+      description: 'Comprehensive supply of building materials, hand tools, power tools, plumbing, electrical supplies, cement, steel, timber, and roofing materials.',
       features: [
-        'Technology Assessment',
-        'Architecture Design',
-        'Vendor Selection',
-        'Implementation Support',
+        'Building and construction materials',
+        'Hand tools and power tools',
+        'Plumbing and electrical supplies',
+        'Cement, steel, timber, and roofing',
       ],
-      icon: '💡',
+      icon: '🔧',
     },
     {
-      title: 'Software Development',
-      description: 'Custom software solutions tailored to your unique business requirements.',
+      title: 'Commodity Broking',
+      description: 'Agricultural and industrial commodity brokerage with market linkage, price negotiation, and trade coordination support.',
       features: [
-        'Web Applications',
-        'Mobile Applications',
-        'Enterprise Software',
-        'API Development',
+        'Agricultural commodity brokerage',
+        'Industrial commodity brokerage',
+        'Market linkage and price negotiation',
+        'Trade coordination and settlement support',
       ],
-      icon: '💻',
+      icon: '📈',
     },
     {
-      title: 'Cloud Solutions',
-      description: 'Scalable cloud infrastructure and migration services for modern businesses.',
+      title: 'Transport & Logistics',
+      description: 'Freight coordination, warehousing, delivery management, and cross-border logistics solutions for efficient supply chain operations.',
       features: [
-        'Cloud Migration',
-        'Infrastructure as a Service',
-        'Cloud Security',
-        'Cost Optimization',
+        'Freight coordination',
+        'Warehousing and delivery management',
+        'Cross-border logistics facilitation',
+        'Local logistics solutions',
       ],
-      icon: '☁️',
+      icon: '🚛',
     },
     {
-      title: 'Data Analytics',
-      description: 'Turn your data into actionable insights with advanced analytics solutions.',
+      title: 'Supply Chain Management',
+      description: 'End-to-end procurement, supplier coordination, inventory management, and logistics planning for cost optimization.',
       features: [
-        'Business Intelligence',
-        'Data Warehousing',
-        'Predictive Analytics',
-        'Data Visualization',
+        'Procurement and supplier coordination',
+        'Inventory management',
+        'Distribution management',
+        'Cost optimization and logistics planning',
       ],
-      icon: '📊',
+      icon: '📦',
     },
     {
-      title: 'Cybersecurity',
-      description: 'Protect your business with comprehensive security solutions and monitoring.',
+      title: 'Tendering & Bulk Wholesaling',
+      description: 'Participation in public and private tenders with contract-based procurement and fulfillment capabilities.',
       features: [
-        'Security Assessment',
-        'Threat Monitoring',
-        'Compliance Management',
-        'Incident Response',
+        'Public and private tenders',
+        'Bulk supply of goods and materials',
+        'Contract-based procurement',
+        'Fulfillment services',
       ],
-      icon: '🔒',
+      icon: '📋',
+    },
+    {
+      title: 'Real Estate & Property',
+      description: 'Property acquisition and disposal, land sourcing, investment facilitation, and real estate trading partnerships.',
+      features: [
+        'Property acquisition and disposal',
+        'Land sourcing and investment facilitation',
+        'Real estate trading',
+        'Property partnerships',
+      ],
+      icon: '🏢',
+    },
+    {
+      title: 'Money & Capital Markets',
+      description: 'Capital sourcing and deal facilitation, investment structuring, advisory support, and financial partnerships.',
+      features: [
+        'Capital sourcing and deal facilitation',
+        'Investment structuring',
+        'Advisory support',
+        'Financial partnerships and funding linkages',
+      ],
+      icon: '💰',
+    },
+    {
+      title: 'General Dealership',
+      description: 'Product and brand representation through authorized and independent dealerships with market development support.',
+      features: [
+        'Product and brand representation',
+        'Authorized and independent dealerships',
+        'Market development',
+        'Distribution networks',
+      ],
+      icon: '🤝',
     },
   ];
 
@@ -75,7 +108,8 @@ export default function ServicesPage() {
         <div className="container mx-auto px-4">
           <h1 className="text-4xl md:text-5xl font-bold mb-6">Our Services</h1>
           <p className="text-xl md:text-2xl text-primary-100 max-w-3xl">
-            Comprehensive solutions designed to meet your business needs and drive growth.
+            Comprehensive wholesale, retail, brokerage, and logistics solutions designed to meet your 
+            business needs across multiple commercial sectors.
           </p>
         </div>
       </section>
@@ -117,12 +151,12 @@ export default function ServicesPage() {
       <section className="py-16 md:py-24 bg-gray-50">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-            Ready to Transform Your Business?
+            Ready to Partner With Us?
           </h2>
           <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
-            Let's discuss how our services can help you achieve your business goals.
+            Contact us to discuss how our wholesale, retail, and business solutions can support your growth.
           </p>
-          <a href="/contact" className="btn-primary inline-block">
+          <a href="/#contact" className="btn-primary inline-block">
             Contact Us Today
           </a>
         </div>

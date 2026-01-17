@@ -43,7 +43,7 @@ export default function ContactPage() {
         <div className="container mx-auto px-4">
           <h1 className="text-4xl md:text-5xl font-bold mb-6">Contact Us</h1>
           <p className="text-xl md:text-2xl text-primary-100 max-w-3xl">
-            Get in touch with our team to discuss your project or learn more about our services.
+            Ready to discuss your wholesale, logistics, or business needs? Get in touch with our team today.
           </p>
         </div>
       </section>
@@ -167,9 +167,8 @@ export default function ContactPage() {
                   <div>
                     <h3 className="font-semibold text-gray-900 mb-1">Address</h3>
                     <p className="text-gray-600">
-                      123 Business Street<br />
-                      City, State 12345<br />
-                      Country
+                      Subdivision R Homefield<br />
+                      Mt Hampden, Zimbabwe
                     </p>
                   </div>
                 </div>
@@ -178,8 +177,21 @@ export default function ContactPage() {
                   <div className="text-2xl mr-4">📧</div>
                   <div>
                     <h3 className="font-semibold text-gray-900 mb-1">Email</h3>
-                    <p className="text-gray-600">info@solutionmerchants.com</p>
-                    <p className="text-gray-600">support@solutionmerchants.com</p>
+                    <p className="text-gray-600">
+                      <a href="mailto:info@solutionsmerchants.co.zw" className="text-primary-600 hover:text-primary-700">
+                        info@solutionsmerchants.co.zw
+                      </a>
+                    </p>
+                    <p className="text-gray-600">
+                      <a href="mailto:accounts@solutionsmerchants.co.zw" className="text-primary-600 hover:text-primary-700">
+                        accounts@solutionsmerchants.co.zw
+                      </a>
+                    </p>
+                    <p className="text-gray-600">
+                      <a href="mailto:admin@solutionsmerchants.co.zw" className="text-primary-600 hover:text-primary-700">
+                        admin@solutionsmerchants.co.zw
+                      </a>
+                    </p>
                   </div>
                 </div>
 
@@ -187,18 +199,66 @@ export default function ContactPage() {
                   <div className="text-2xl mr-4">📞</div>
                   <div>
                     <h3 className="font-semibold text-gray-900 mb-1">Phone</h3>
-                    <p className="text-gray-600">+1 (555) 123-4567</p>
-                    <p className="text-gray-600">+1 (555) 987-6543</p>
+                    <p className="text-gray-600 mb-2">
+                      <strong>Zimbabwe:</strong><br />
+                      <a href="tel:+263788699788" className="text-primary-600 hover:text-primary-700">
+                        +263 7 88699788
+                      </a>
+                    </p>
+                    <p className="text-gray-600">
+                      <strong>International:</strong><br />
+                      <a href="tel:+61466841679" className="text-primary-600 hover:text-primary-700">
+                        +61 466 841 679
+                      </a><br />
+                      <a href="tel:+61480568555" className="text-primary-600 hover:text-primary-700">
+                        +61 480 568 555
+                      </a>
+                    </p>
                   </div>
                 </div>
 
                 <div className="flex items-start">
-                  <div className="text-2xl mr-4">🕐</div>
+                  <div className="text-2xl mr-4">💬</div>
                   <div>
-                    <h3 className="font-semibold text-gray-900 mb-1">Business Hours</h3>
-                    <p className="text-gray-600">Monday - Friday: 9:00 AM - 6:00 PM</p>
-                    <p className="text-gray-600">Saturday: 10:00 AM - 4:00 PM</p>
-                    <p className="text-gray-600">Sunday: Closed</p>
+                    <h3 className="font-semibold text-gray-900 mb-2">WhatsApp</h3>
+                    <div className="space-y-2">
+                      <a 
+                        href="https://wa.me/61466841679" 
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-lg transition-colors text-sm"
+                      >
+                        <span className="mr-2">💬</span>
+                        Chat (+61 466 841 679)
+                      </a>
+                      <br />
+                      <a 
+                        href="https://wa.me/61480568555" 
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-lg transition-colors text-sm"
+                      >
+                        <span className="mr-2">💬</span>
+                        Chat (+61 480 568 555)
+                      </a>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="flex items-start">
+                  <div className="text-2xl mr-4">🌐</div>
+                  <div>
+                    <h3 className="font-semibold text-gray-900 mb-1">Website</h3>
+                    <p className="text-gray-600">
+                      <a 
+                        href="https://www.solutionsmerchants.co.zw" 
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-primary-600 hover:text-primary-700"
+                      >
+                        www.solutionsmerchants.co.zw
+                      </a>
+                    </p>
                   </div>
                 </div>
               </div>
@@ -206,8 +266,8 @@ export default function ContactPage() {
               <div className="mt-8 p-6 bg-primary-50 rounded-lg">
                 <h3 className="font-semibold text-gray-900 mb-3">Quick Response</h3>
                 <p className="text-gray-600">
-                  We typically respond to all inquiries within 24 hours during business days.
-                  For urgent matters, please call us directly.
+                  We are committed to responding to all inquiries promptly. For immediate assistance, 
+                  please contact us via WhatsApp or call our direct lines.
                 </p>
               </div>
             </div>

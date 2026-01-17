@@ -1,68 +1,171 @@
 import Link from 'next/link';
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import { 
+  FaStore, 
+  FaTools, 
+  FaChartLine, 
+  FaTruck, 
+  FaBoxes, 
+  FaClipboardList, 
+  FaBuilding, 
+  FaDollarSign, 
+  FaHandshake 
+} from 'react-icons/fa';
+import { IconType } from 'react-icons';
+
+interface Service {
+  title: string;
+  slug: string;
+  description: string;
+  Icon: IconType;
+  details: string[];
+}
 
 export default function Services() {
-  const services = [
+  const services: Service[] = [
     {
-      title: 'Digital Transformation',
-      description: 'Transform your business with cutting-edge digital solutions and strategies.',
-      icon: '🚀',
+      title: 'General Wholesale & Retail',
+      slug: 'wholesale-retail',
+      description: 'Bulk procurement and distribution of goods, retail and wholesale supply to businesses, institutions, and contractors. Import and export of general merchandise.',
+      Icon: FaStore,
+      details: ['Bulk procurement', 'Retail & wholesale supply', 'Import/export services']
     },
     {
-      title: 'IT Consulting',
-      description: 'Expert guidance to optimize your technology infrastructure and processes.',
-      icon: '💡',
+      title: 'Hardware Wholesale',
+      slug: 'hardware-wholesale',
+      description: 'Comprehensive supply of building materials, hand tools, power tools, plumbing, electrical supplies, cement, steel, timber, and roofing materials.',
+      Icon: FaTools,
+      details: ['Building materials', 'Tools & equipment', 'Industrial supplies']
     },
     {
-      title: 'Software Development',
-      description: 'Custom software solutions tailored to your unique business requirements.',
-      icon: '💻',
+      title: 'Commodity Broking',
+      slug: 'commodity-broking',
+      description: 'Agricultural and industrial commodity brokerage with market linkage, price negotiation, and trade coordination support.',
+      Icon: FaChartLine,
+      details: ['Agricultural commodities', 'Industrial commodities', 'Trade coordination']
     },
     {
-      title: 'Cloud Solutions',
-      description: 'Scalable cloud infrastructure and migration services for modern businesses.',
-      icon: '☁️',
+      title: 'Transport & Logistics',
+      slug: 'transport-logistics',
+      description: 'Freight coordination, warehousing, delivery management, and cross-border logistics solutions for efficient supply chain operations.',
+      Icon: FaTruck,
+      details: ['Freight coordination', 'Warehousing', 'Cross-border logistics']
     },
     {
-      title: 'Data Analytics',
-      description: 'Turn your data into actionable insights with advanced analytics solutions.',
-      icon: '📊',
+      title: 'Supply Chain Management',
+      slug: 'supply-chain-management',
+      description: 'End-to-end procurement, supplier coordination, inventory management, and logistics planning for cost optimization.',
+      Icon: FaBoxes,
+      details: ['Procurement services', 'Inventory management', 'Cost optimization']
     },
     {
-      title: 'Cybersecurity',
-      description: 'Protect your business with comprehensive security solutions and monitoring.',
-      icon: '🔒',
+      title: 'Tendering & Bulk Wholesaling',
+      slug: 'tendering-bulk-wholesaling',
+      description: 'Participation in public and private tenders with contract-based procurement and fulfillment capabilities.',
+      Icon: FaClipboardList,
+      details: ['Public tenders', 'Private contracts', 'Bulk fulfillment']
+    },
+    {
+      title: 'Real Estate & Property',
+      slug: 'real-estate-property',
+      description: 'Property acquisition and disposal, land sourcing, investment facilitation, and real estate trading partnerships.',
+      Icon: FaBuilding,
+      details: ['Property acquisition', 'Land sourcing', 'Real estate trading']
+    },
+    {
+      title: 'Money & Capital Markets',
+      slug: 'money-capital-markets',
+      description: 'Capital sourcing and deal facilitation, investment structuring, advisory support, and financial partnerships.',
+      Icon: FaDollarSign,
+      details: ['Capital sourcing', 'Investment structuring', 'Financial partnerships']
+    },
+    {
+      title: 'General Dealership',
+      slug: 'general-dealership',
+      description: 'Product and brand representation through authorized and independent dealerships with market development support.',
+      Icon: FaHandshake,
+      details: ['Brand representation', 'Market development', 'Distribution networks']
     },
   ];
 
   return (
-    <section className="py-16 md:py-24 bg-gray-50">
-      <div className="container mx-auto px-4">
+    <section id="services" className="relative py-16 md:py-24 bg-gradient-to-b from-gray-50 via-white to-gray-50">
+      {/* Background decorative elements */}
+      <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-br from-primary-100/30 to-accent-100/20 rounded-full blur-3xl" />
+      <div className="absolute bottom-0 left-0 w-96 h-96 bg-gradient-to-tr from-accent-100/20 to-primary-100/30 rounded-full blur-3xl" />
+      
+      <div className="container relative mx-auto px-4">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4">
+          <h2 className="text-4xl md:text-6xl font-bold mb-4 bg-gradient-to-r from-gray-900 via-primary-800 to-gray-900 bg-clip-text text-transparent">
             Our Services
           </h2>
-          <p className="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto">
-            Comprehensive solutions designed to meet your business needs and drive growth.
+          <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
+            Comprehensive wholesale, retail, brokerage, and logistics solutions designed to meet your 
+            business needs across multiple commercial sectors.
           </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((service, index) => (
-            <div
+            <Link
               key={index}
-              className="bg-white p-8 rounded-lg shadow-md hover:shadow-xl transition-shadow"
+              href={`/services/${service.slug}`}
+              className="group"
             >
-              <div className="text-5xl mb-4">{service.icon}</div>
-              <h3 className="text-xl font-bold text-gray-900 mb-3">{service.title}</h3>
-              <p className="text-gray-600 mb-4">{service.description}</p>
-              <Link
-                href="/services"
-                className="text-primary-600 font-semibold hover:text-primary-700 transition-colors"
-              >
-                Learn More →
-              </Link>
-            </div>
+              <Card className="h-full border-2 border-transparent hover:border-accent-500 transition-all hover:shadow-2xl hover:scale-105 bg-gradient-to-br from-white to-gray-50/50 backdrop-blur-sm">
+                <CardHeader className="pb-4">
+                  <div className="text-accent-600 text-5xl mb-4 group-hover:scale-110 transition-transform">
+                    <service.Icon />
+                  </div>
+                  <CardTitle className="group-hover:text-accent-600 transition-colors">{service.title}</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <CardDescription className="text-gray-600 mb-4 text-base">
+                    {service.description}
+                  </CardDescription>
+                  <ul className="space-y-1 mb-6">
+                    {service.details.map((detail) => (
+                      <li key={detail} className="text-sm text-gray-500 flex items-center">
+                        <span className="text-accent-500 mr-2">•</span>
+                        {detail}
+                      </li>
+                    ))}
+                  </ul>
+                  <div className="text-accent-600 font-semibold group-hover:text-accent-700 flex items-center pt-2 border-t border-gray-100">
+                    Learn More 
+                    <span className="ml-2 group-hover:translate-x-1 transition-transform">→</span>
+                  </div>
+                </CardContent>
+              </Card>
+            </Link>
           ))}
+        </div>
+
+        {/* Competitive Advantage Section */}
+        <div className="mt-16 rounded-2xl shadow-xl p-8 md:p-12 max-w-4xl mx-auto bg-gradient-to-br from-white via-primary-50/30 to-accent-50/20 border border-gray-100">
+          <h3 className="text-2xl font-bold text-gray-900 text-center mb-8">Our Competitive Advantage</h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="flex items-start">
+              <span className="text-primary-600 text-xl mr-3">▸</span>
+              <p className="text-gray-700">Diversified operations reducing market risk</p>
+            </div>
+            <div className="flex items-start">
+              <span className="text-primary-600 text-xl mr-3">▸</span>
+              <p className="text-gray-700">Strong negotiation and brokerage expertise</p>
+            </div>
+            <div className="flex items-start">
+              <span className="text-primary-600 text-xl mr-3">▸</span>
+              <p className="text-gray-700">Large-volume and tender-based supply capability</p>
+            </div>
+            <div className="flex items-start">
+              <span className="text-primary-600 text-xl mr-3">▸</span>
+              <p className="text-gray-700">Integrated logistics and supply chain coordination</p>
+            </div>
+            <div className="flex items-start">
+              <span className="text-primary-600 text-xl mr-3">▸</span>
+              <p className="text-gray-700">Reliable partnerships and repeat clientele</p>
+            </div>
+          </div>
         </div>
       </div>
     </section>
