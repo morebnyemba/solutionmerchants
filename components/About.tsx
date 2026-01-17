@@ -1,4 +1,5 @@
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { FaCheckCircle } from 'react-icons/fa';
 
 export default function About() {
   const values = [
@@ -86,42 +87,42 @@ export default function About() {
           <CardContent>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               <div className="flex items-start group">
-                <span className="text-accent-500 text-2xl mr-3 group-hover:scale-110 transition-transform">✓</span>
+                <FaCheckCircle className="text-accent-500 text-2xl mr-3 group-hover:scale-110 transition-transform flex-shrink-0" />
                 <div>
                   <h4 className="font-semibold text-gray-900 mb-1">Comprehensive Wholesale Capability</h4>
                   <p className="text-gray-600 text-sm">Including hardware and bulk supplies</p>
                 </div>
               </div>
               <div className="flex items-start group">
-                <span className="text-accent-500 text-2xl mr-3 group-hover:scale-110 transition-transform">✓</span>
+                <FaCheckCircle className="text-accent-500 text-2xl mr-3 group-hover:scale-110 transition-transform flex-shrink-0" />
                 <div>
                   <h4 className="font-semibold text-gray-900 mb-1">Multi-Sector Coverage</h4>
                   <p className="text-gray-600 text-sm">One trusted merchant entity</p>
                 </div>
               </div>
               <div className="flex items-start group">
-                <span className="text-accent-500 text-2xl mr-3 group-hover:scale-110 transition-transform">✓</span>
+                <FaCheckCircle className="text-accent-500 text-2xl mr-3 group-hover:scale-110 transition-transform flex-shrink-0" />
                 <div>
                   <h4 className="font-semibold text-gray-900 mb-1">Strong Networks</h4>
                   <p className="text-gray-600 text-sm">Established supplier and buyer relationships</p>
                 </div>
               </div>
               <div className="flex items-start group">
-                <span className="text-accent-500 text-2xl mr-3 group-hover:scale-110 transition-transform">✓</span>
+                <FaCheckCircle className="text-accent-500 text-2xl mr-3 group-hover:scale-110 transition-transform flex-shrink-0" />
                 <div>
                   <h4 className="font-semibold text-gray-900 mb-1">Tender & Bulk Supply Expertise</h4>
                   <p className="text-gray-600 text-sm">Public and private sector experience</p>
                 </div>
               </div>
               <div className="flex items-start group">
-                <span className="text-accent-500 text-2xl mr-3 group-hover:scale-110 transition-transform">✓</span>
+                <FaCheckCircle className="text-accent-500 text-2xl mr-3 group-hover:scale-110 transition-transform flex-shrink-0" />
                 <div>
                   <h4 className="font-semibold text-gray-900 mb-1">Efficient Supply Chain</h4>
                   <p className="text-gray-600 text-sm">Optimized logistics management</p>
                 </div>
               </div>
               <div className="flex items-start group">
-                <span className="text-accent-500 text-2xl mr-3 group-hover:scale-110 transition-transform">✓</span>
+                <FaCheckCircle className="text-accent-500 text-2xl mr-3 group-hover:scale-110 transition-transform flex-shrink-0" />
                 <div>
                   <h4 className="font-semibold text-gray-900 mb-1">Professional & Ethical</h4>
                   <p className="text-gray-600 text-sm">Client-focused business practices</p>

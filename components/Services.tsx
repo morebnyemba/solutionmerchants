@@ -1,69 +1,89 @@
 import Link from 'next/link';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import { 
+  FaStore, 
+  FaTools, 
+  FaChartLine, 
+  FaTruck, 
+  FaBoxes, 
+  FaClipboardList, 
+  FaBuilding, 
+  FaDollarSign, 
+  FaHandshake 
+} from 'react-icons/fa';
+import { IconType } from 'react-icons';
+
+interface Service {
+  title: string;
+  slug: string;
+  description: string;
+  Icon: IconType;
+  details: string[];
+}
 
 export default function Services() {
-  const services = [
+  const services: Service[] = [
     {
       title: 'General Wholesale & Retail',
       slug: 'wholesale-retail',
       description: 'Bulk procurement and distribution of goods, retail and wholesale supply to businesses, institutions, and contractors. Import and export of general merchandise.',
-      icon: '🏪',
+      Icon: FaStore,
       details: ['Bulk procurement', 'Retail & wholesale supply', 'Import/export services']
     },
     {
       title: 'Hardware Wholesale',
       slug: 'hardware-wholesale',
       description: 'Comprehensive supply of building materials, hand tools, power tools, plumbing, electrical supplies, cement, steel, timber, and roofing materials.',
-      icon: '🔧',
+      Icon: FaTools,
       details: ['Building materials', 'Tools & equipment', 'Industrial supplies']
     },
     {
       title: 'Commodity Broking',
       slug: 'commodity-broking',
       description: 'Agricultural and industrial commodity brokerage with market linkage, price negotiation, and trade coordination support.',
-      icon: '📈',
+      Icon: FaChartLine,
       details: ['Agricultural commodities', 'Industrial commodities', 'Trade coordination']
     },
     {
       title: 'Transport & Logistics',
       slug: 'transport-logistics',
       description: 'Freight coordination, warehousing, delivery management, and cross-border logistics solutions for efficient supply chain operations.',
-      icon: '🚛',
+      Icon: FaTruck,
       details: ['Freight coordination', 'Warehousing', 'Cross-border logistics']
     },
     {
       title: 'Supply Chain Management',
       slug: 'supply-chain-management',
       description: 'End-to-end procurement, supplier coordination, inventory management, and logistics planning for cost optimization.',
-      icon: '📦',
+      Icon: FaBoxes,
       details: ['Procurement services', 'Inventory management', 'Cost optimization']
     },
     {
       title: 'Tendering & Bulk Wholesaling',
       slug: 'tendering-bulk-wholesaling',
       description: 'Participation in public and private tenders with contract-based procurement and fulfillment capabilities.',
-      icon: '📋',
+      Icon: FaClipboardList,
       details: ['Public tenders', 'Private contracts', 'Bulk fulfillment']
     },
     {
       title: 'Real Estate & Property',
       slug: 'real-estate-property',
       description: 'Property acquisition and disposal, land sourcing, investment facilitation, and real estate trading partnerships.',
-      icon: '🏢',
+      Icon: FaBuilding,
       details: ['Property acquisition', 'Land sourcing', 'Real estate trading']
     },
     {
       title: 'Money & Capital Markets',
       slug: 'money-capital-markets',
       description: 'Capital sourcing and deal facilitation, investment structuring, advisory support, and financial partnerships.',
-      icon: '💰',
+      Icon: FaDollarSign,
       details: ['Capital sourcing', 'Investment structuring', 'Financial partnerships']
     },
     {
       title: 'General Dealership',
       slug: 'general-dealership',
       description: 'Product and brand representation through authorized and independent dealerships with market development support.',
-      icon: '🤝',
+      Icon: FaHandshake,
       details: ['Brand representation', 'Market development', 'Distribution networks']
     },
   ];
@@ -94,7 +114,9 @@ export default function Services() {
             >
               <Card className="h-full border-2 border-transparent hover:border-accent-500 transition-all hover:shadow-2xl hover:scale-105 bg-gradient-to-br from-white to-gray-50/50 backdrop-blur-sm">
                 <CardHeader className="pb-4">
-                  <div className="text-5xl mb-4 group-hover:scale-110 transition-transform">{service.icon}</div>
+                  <div className="text-accent-600 text-5xl mb-4 group-hover:scale-110 transition-transform">
+                    <service.Icon />
+                  </div>
                   <CardTitle className="group-hover:text-accent-600 transition-colors">{service.title}</CardTitle>
                 </CardHeader>
                 <CardContent>

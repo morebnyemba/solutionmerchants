@@ -2,12 +2,37 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { 
+  FaStore, 
+  FaTools, 
+  FaChartLine, 
+  FaTruck, 
+  FaBoxes, 
+  FaClipboardList, 
+  FaBuilding, 
+  FaDollarSign, 
+  FaHandshake,
+  FaCheckCircle 
+} from 'react-icons/fa';
+import { IconType } from 'react-icons';
+
+interface ServiceData {
+  title: string;
+  Icon: IconType;
+  description: string;
+  overview: string;
+  keyServices: string[];
+  benefits: string[];
+  industries: string[];
+  backgroundImage: string;
+}
 
 // Service data with detailed information
-const servicesData = {
+const servicesData: Record<string, ServiceData> = {
   'wholesale-retail': {
     title: 'General Wholesale & Retail',
-    icon: '🏪',
+    Icon: FaStore,
+    backgroundImage: 'https://images.unsplash.com/photo-1441984904996-e0b6ba687e04?w=1920&q=80',
     description: 'Comprehensive bulk procurement and distribution services for businesses, institutions, and contractors across Zimbabwe and international markets.',
     overview: 'Solutions Merchant Investments specializes in general wholesale and retail trading, providing end-to-end procurement and distribution solutions. We serve businesses, institutions, contractors, and individual buyers with reliable supply chain management.',
     keyServices: [
@@ -30,7 +55,8 @@ const servicesData = {
   },
   'hardware-wholesale': {
     title: 'Hardware Wholesale',
-    icon: '🔧',
+    Icon: FaTools,
+    backgroundImage: 'https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=1920&q=80',
     description: 'Complete supply of building and construction materials, tools, and industrial hardware for commercial and residential projects.',
     overview: 'We provide comprehensive hardware wholesale services, supplying everything from basic hand tools to major construction materials. Our extensive inventory and reliable supply chain ensure your projects never face delays due to material shortages.',
     keyServices: [
@@ -55,7 +81,8 @@ const servicesData = {
   },
   'commodity-broking': {
     title: 'Commodity Broking',
-    icon: '📈',
+    Icon: FaChartLine,
+    backgroundImage: 'https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=1920&q=80',
     description: 'Agricultural and industrial commodity brokerage services connecting buyers and sellers with market intelligence and trade facilitation.',
     overview: 'Our commodity broking services bridge the gap between producers and buyers in both agricultural and industrial sectors. We provide market linkage, price negotiation expertise, and comprehensive trade coordination support.',
     keyServices: [
@@ -79,7 +106,8 @@ const servicesData = {
   },
   'transport-logistics': {
     title: 'Transport & Logistics',
-    icon: '🚛',
+    Icon: FaTruck,
+    backgroundImage: 'https://images.unsplash.com/photo-1566576721346-d4a3b4eaeb55?w=1920&q=80',
     description: 'End-to-end freight coordination, warehousing, and delivery management for domestic and cross-border logistics.',
     overview: 'We offer comprehensive transport and logistics solutions designed to optimize your supply chain operations. From local deliveries to international freight coordination, we ensure your goods move efficiently and securely.',
     keyServices: [
@@ -103,7 +131,8 @@ const servicesData = {
   },
   'supply-chain-management': {
     title: 'Supply Chain Management',
-    icon: '📦',
+    Icon: FaBoxes,
+    backgroundImage: 'https://images.unsplash.com/photo-1553413077-190dd305871c?w=1920&q=80',
     description: 'Strategic procurement, supplier coordination, inventory management, and logistics planning for optimal cost efficiency.',
     overview: 'Our supply chain management services provide end-to-end visibility and control over your procurement and distribution processes. We help businesses optimize costs, improve efficiency, and maintain reliable supply chains.',
     keyServices: [
@@ -127,7 +156,8 @@ const servicesData = {
   },
   'tendering-bulk-wholesaling': {
     title: 'Tendering & Bulk Wholesaling',
-    icon: '📋',
+    Icon: FaClipboardList,
+    backgroundImage: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=1920&q=80',
     description: 'Participation in public and private tenders with proven bulk supply and contract fulfillment capabilities.',
     overview: 'We specialize in tender participation and bulk wholesaling, serving government agencies, corporations, and large institutions. Our proven track record in contract fulfillment ensures reliable delivery on large-scale projects.',
     keyServices: [
@@ -151,7 +181,8 @@ const servicesData = {
   },
   'real-estate-property': {
     title: 'Real Estate & Property',
-    icon: '🏢',
+    Icon: FaBuilding,
+    backgroundImage: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=1920&q=80',
     description: 'Property acquisition and disposal, land sourcing, investment facilitation, and real estate trading services.',
     overview: 'Our real estate services cover the full spectrum of property transactions, from land sourcing to investment facilitation. We help clients navigate the property market with expert guidance and reliable partnerships.',
     keyServices: [
@@ -175,7 +206,8 @@ const servicesData = {
   },
   'money-capital-markets': {
     title: 'Money & Capital Markets',
-    icon: '💰',
+    Icon: FaDollarSign,
+    backgroundImage: 'https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=1920&q=80',
     description: 'Capital sourcing, investment structuring, financial partnerships, and funding linkages for business growth.',
     overview: 'We facilitate access to capital markets and financial partnerships, helping businesses secure funding for growth and expansion. Our advisory services cover investment structuring and deal facilitation.',
     keyServices: [
@@ -199,7 +231,8 @@ const servicesData = {
   },
   'general-dealership': {
     title: 'General Dealership',
-    icon: '🤝',
+    Icon: FaHandshake,
+    backgroundImage: 'https://images.unsplash.com/photo-1521791136064-7986c2920216?w=1920&q=80',
     description: 'Product and brand representation through authorized and independent dealerships with comprehensive market development support.',
     overview: 'We provide dealership services for quality products and brands, representing manufacturers and suppliers in target markets. Our market development capabilities ensure successful product launches and sustained growth.',
     keyServices: [
@@ -246,17 +279,27 @@ export default function ServiceDetailPage({ params }: PageProps) {
 
   return (
     <div className="bg-white">
-      {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-primary-600 via-primary-700 to-primary-900 text-white py-24 overflow-hidden">
-        {/* Gradient overlay */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
+      {/* Hero Section with Background Image */}
+      <section className="relative bg-gradient-to-br from-primary-600 via-primary-700 to-primary-900 text-white py-24 overflow-hidden min-h-[500px]">
+        {/* Background image */}
+        <div 
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20"
+          style={{
+            backgroundImage: `url('${service.backgroundImage}')`,
+          }}
+        />
+        {/* Gradient overlays */}
+        <div className="absolute inset-0 bg-gradient-to-br from-primary-800/90 via-primary-900/80 to-black/70" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
         {/* Decorative orbs */}
         <div className="absolute top-10 right-10 w-64 h-64 bg-accent-500/20 rounded-full blur-3xl" />
         <div className="absolute bottom-10 left-10 w-96 h-96 bg-primary-400/10 rounded-full blur-3xl" />
         
         <div className="container relative mx-auto px-4">
           <div className="max-w-4xl">
-            <div className="text-7xl mb-6">{service.icon}</div>
+            <div className="text-accent-400 text-7xl mb-6">
+              <service.Icon />
+            </div>
             <h1 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-white to-primary-50 bg-clip-text text-transparent">
               {service.title}
             </h1>
@@ -287,7 +330,7 @@ export default function ServiceDetailPage({ params }: PageProps) {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               {service.keyServices.map((item, index) => (
                 <div key={index} className="flex items-start">
-                  <span className="text-accent-500 text-xl mr-3 mt-1">✓</span>
+                  <FaCheckCircle className="text-accent-500 text-xl mr-3 mt-1 flex-shrink-0" />
                   <p className="text-gray-700">{item}</p>
                 </div>
               ))}
@@ -308,7 +351,7 @@ export default function ServiceDetailPage({ params }: PageProps) {
                 <Card key={index} className="bg-gradient-to-br from-white to-accent-50/30 border-accent-200 hover:shadow-lg transition-shadow">
                   <CardContent className="pt-6">
                     <div className="flex items-center mb-2">
-                      <span className="text-accent-600 text-2xl mr-2">●</span>
+                      <FaCheckCircle className="text-accent-600 text-2xl mr-2 flex-shrink-0" />
                       <h3 className="text-lg font-semibold text-gray-900">{benefit}</h3>
                     </div>
                   </CardContent>
@@ -353,7 +396,7 @@ export default function ServiceDetailPage({ params }: PageProps) {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button asChild size="lg" className="bg-white text-accent-700 hover:bg-gray-100 shadow-xl hover:shadow-2xl">
-              <Link href="/#contact">
+              <Link href="/contact">
                 Contact Us
               </Link>
             </Button>
