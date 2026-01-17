@@ -46,8 +46,8 @@ export default function About() {
         <div className="max-w-6xl mx-auto mb-16">
           <h3 className="text-3xl font-bold text-gray-900 text-center mb-10">Our Core Values</h3>
           <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6">
-            {values.map((value, index) => (
-              <div key={index} className="text-center p-4">
+            {values.map((value) => (
+              <div key={value.title} className="text-center p-4">
                 <div className="bg-primary-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
                   <span className="text-2xl font-bold text-primary-700">{value.title[0]}</span>
                 </div>

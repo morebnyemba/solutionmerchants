@@ -81,8 +81,8 @@ export default function Services() {
               <h3 className="text-xl font-bold text-gray-900 mb-3">{service.title}</h3>
               <p className="text-gray-600 mb-4">{service.description}</p>
               <ul className="space-y-1 mb-4">
-                {service.details.map((detail, idx) => (
-                  <li key={idx} className="text-sm text-gray-500 flex items-center">
+                {service.details.map((detail) => (
+                  <li key={detail} className="text-sm text-gray-500 flex items-center">
                     <span className="text-primary-600 mr-2">•</span>
                     {detail}
                   </li>
