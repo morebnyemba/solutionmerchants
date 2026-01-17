@@ -20,7 +20,7 @@ export default function Header() {
               alt="Solutions Merchant Investments Logo"
               width={147}
               height={100}
-              className="object-contain h-12 w-auto"
+              className="object-contain h-20 w-auto"
               priority
             />
           </Link>

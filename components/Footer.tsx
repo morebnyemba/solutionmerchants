@@ -19,7 +19,7 @@ export default function Footer() {
                 alt="Solutions Merchant Investments Logo"
                 width={147}
                 height={100}
-                className="object-contain h-16 w-auto"
+                className="object-contain h-24 w-auto"
               />
             </Link>
             <p className="text-gray-300 mb-6 leading-relaxed">
