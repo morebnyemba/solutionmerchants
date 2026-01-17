@@ -1,4 +1,6 @@
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Button } from '@/components/ui/button';
+import ContactModal from '@/components/ContactModal';
 import { FaCheckCircle } from 'react-icons/fa';
 
 export default function About() {
@@ -85,7 +87,7 @@ export default function About() {
             </CardTitle>
           </CardHeader>
           <CardContent>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
               <div className="flex items-start group">
                 <FaCheckCircle className="text-accent-500 text-2xl mr-3 group-hover:scale-110 transition-transform flex-shrink-0" />
                 <div>
@@ -128,6 +130,18 @@ export default function About() {
                   <p className="text-gray-600 text-sm">Client-focused business practices</p>
                 </div>
               </div>
+            </div>
+            
+            {/* CTA Button */}
+            <div className="text-center pt-6 border-t border-gray-200">
+              <p className="text-gray-700 mb-4">Ready to partner with us?</p>
+              <ContactModal 
+                trigger={
+                  <Button size="lg" className="bg-gradient-to-r from-accent-500 to-accent-600 hover:from-accent-600 hover:to-accent-700 text-white shadow-lg">
+                    Get in Touch
+                  </Button>
+                }
+              />
             </div>
           </CardContent>
         </Card>

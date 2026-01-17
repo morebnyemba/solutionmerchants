@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import TypedText from '@/components/TypedText';
+import ContactModal from '@/components/ContactModal';
 
 export default function Hero() {
   const typedStrings = [
@@ -32,7 +33,7 @@ export default function Hero() {
             <span className="block bg-gradient-to-r from-white to-primary-50 bg-clip-text text-transparent">
               Your Trusted Partner for
             </span>
-            <span className="block mt-2">
+            <span className="block mt-2 min-h-[1.2em]">
               <TypedText 
                 strings={typedStrings} 
                 className="bg-gradient-to-r from-accent-400 to-accent-200 bg-clip-text text-transparent"
@@ -49,11 +50,13 @@ export default function Hero() {
                 Our Services
               </Link>
             </Button>
-            <Button asChild variant="outline" size="lg" className="border-2 border-white text-white hover:bg-white/10 backdrop-blur-sm">
-              <Link href="/contact">
-                Get in Touch
-              </Link>
-            </Button>
+            <ContactModal 
+              trigger={
+                <Button variant="outline" size="lg" className="border-2 border-white text-white hover:bg-white/10 backdrop-blur-sm">
+                  Get in Touch
+                </Button>
+              }
+            />
           </div>
         </div>
       </div>
