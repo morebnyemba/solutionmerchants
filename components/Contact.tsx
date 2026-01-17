@@ -1,6 +1,8 @@
 'use client';
 
 import { useState } from 'react';
+import { MdLocationOn, MdEmail, MdPhone, MdLanguage } from 'react-icons/md';
+import { FaWhatsapp } from 'react-icons/fa';
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -28,8 +30,11 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="py-16 md:py-24 bg-white">
-      <div className="container mx-auto px-4">
+    <section id="contact" className="py-16 md:py-24 bg-gradient-to-br from-blue-50 via-white to-orange-50 relative overflow-hidden">
+      {/* Background decoration */}
+      <div className="absolute inset-0 bg-gradient-to-br from-primary-100/20 to-accent-100/20 pointer-events-none"></div>
+      
+      <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4">
@@ -42,13 +47,13 @@ export default function Contact() {
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             {/* Contact Information */}
-            <div>
+            <div className="glass-card glass-card-hover rounded-2xl p-8 shadow-xl">
               <h3 className="text-2xl font-bold text-gray-900 mb-6">Contact Information</h3>
               
               {/* Address */}
               <div className="mb-6">
                 <h4 className="font-semibold text-gray-900 mb-2 flex items-center">
-                  <span className="text-primary-600 mr-2">📍</span>
+                  <MdLocationOn className="text-primary-600 mr-2" />
                   Company Address
                 </h4>
                 <p className="text-gray-600 ml-7">
@@ -60,7 +65,7 @@ export default function Contact() {
               {/* Phone Numbers */}
               <div className="mb-6">
                 <h4 className="font-semibold text-gray-900 mb-2 flex items-center">
-                  <span className="text-primary-600 mr-2">📞</span>
+                  <MdPhone className="text-primary-600 mr-2" />
                   Phone Numbers
                 </h4>
                 <div className="ml-7 space-y-2">
@@ -95,7 +100,7 @@ export default function Contact() {
               {/* WhatsApp */}
               <div className="mb-6">
                 <h4 className="font-semibold text-gray-900 mb-2 flex items-center">
-                  <span className="text-primary-600 mr-2">💬</span>
+                  <FaWhatsapp className="text-green-600 mr-2" />
                   WhatsApp
                 </h4>
                 <div className="ml-7 space-y-2">
@@ -105,7 +110,7 @@ export default function Contact() {
                     rel="noopener noreferrer"
                     className="inline-flex items-center bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-lg transition-colors"
                   >
-                    <span className="mr-2">💬</span>
+                    <FaWhatsapp className="mr-2" />
                     Chat on WhatsApp (+61 466 841 679)
                   </a>
                   <br />
@@ -115,7 +120,7 @@ export default function Contact() {
                     rel="noopener noreferrer"
                     className="inline-flex items-center bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-lg transition-colors"
                   >
-                    <span className="mr-2">💬</span>
+                    <FaWhatsapp className="mr-2" />
                     Chat on WhatsApp (+61 480 568 555)
                   </a>
                 </div>
@@ -124,7 +129,7 @@ export default function Contact() {
               {/* Email */}
               <div className="mb-6">
                 <h4 className="font-semibold text-gray-900 mb-2 flex items-center">
-                  <span className="text-primary-600 mr-2">✉️</span>
+                  <MdEmail className="text-primary-600 mr-2" />
                   Email Addresses
                 </h4>
                 <div className="ml-7 space-y-1">
@@ -152,7 +157,7 @@ export default function Contact() {
               {/* Website */}
               <div className="mb-6">
                 <h4 className="font-semibold text-gray-900 mb-2 flex items-center">
-                  <span className="text-primary-600 mr-2">🌐</span>
+                  <MdLanguage className="text-primary-600 mr-2" />
                   Website
                 </h4>
                 <a 
@@ -167,7 +172,7 @@ export default function Contact() {
             </div>
 
             {/* Contact Form */}
-            <div>
+            <div className="glass-card glass-card-hover rounded-2xl p-8 shadow-xl">
               <h3 className="text-2xl font-bold text-gray-900 mb-6">Send Us a Message</h3>
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
