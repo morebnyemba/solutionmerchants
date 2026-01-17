@@ -143,6 +143,31 @@ export default function Footer() {
               </Link>
             </div>
           </div>
+
+          <div className="border-t border-gray-700 mt-8 pt-8 text-center">
+            <p className="text-gray-500 text-xs leading-relaxed">
+              Website designed and developed by{' '}
+              <a 
+                href="https://slykertech.co.zw" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-accent-400 font-semibold hover:text-accent-300 transition-colors"
+              >
+                Slyker Tech Web Services
+              </a>, 
+              contracted by{' '}
+              <a 
+                href="https://milmindszw.com" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-primary-400 font-semibold hover:text-primary-300 transition-colors"
+              >
+                milminds
+              </a>
+              <br />
+              <span className="text-gray-600">for Solutions Merchant Investments</span>
+            </p>
+          </div>
         </div>
       </div>
     </footer>
