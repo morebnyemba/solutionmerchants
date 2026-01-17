@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Link from 'next/link';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -14,6 +15,31 @@ import {
   FaHandshake 
 } from 'react-icons/fa';
 import { IconType } from 'react-icons';
+
+export const metadata: Metadata = {
+  title: "Our Services - Solutions Merchant Investments",
+  description: "Explore our comprehensive business solutions including wholesale & retail trading, hardware supply, logistics, commodity brokerage, and more.",
+  keywords: "business services Zimbabwe, wholesale trading, hardware supply, logistics solutions, commodity brokerage, supply chain management",
+  openGraph: {
+    title: "Our Services - Solutions Merchant Investments",
+    description: "Comprehensive wholesale, retail, hardware supply, logistics, and business solutions",
+    type: "website",
+    url: "https://www.solutionsmerchants.co.zw/services",
+    images: [
+      {
+        url: "/smslog.png",
+        width: 490,
+        height: 112,
+        alt: "Solutions Merchant Investments Logo",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary",
+    title: "Our Services",
+    description: "Wholesale, retail, hardware supply, and logistics solutions",
+  },
+};
 
 interface Service {
   title: string;

@@ -1,3 +1,30 @@
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "About Us - Solutions Merchant Investments",
+  description: "Learn about Solutions Merchant Investments - a diversified enterprise specializing in wholesale, retail, hardware supply, logistics, and multi-sector business solutions.",
+  keywords: "about Solutions Merchant Investments, company profile, business solutions Zimbabwe, wholesale distributor",
+  openGraph: {
+    title: "About Solutions Merchant Investments",
+    description: "Diversified enterprise specializing in wholesale, retail, logistics, and business solutions across Zimbabwe and international markets",
+    type: "website",
+    url: "https://www.solutionsmerchants.co.zw/about",
+    images: [
+      {
+        url: "/smslog.png",
+        width: 490,
+        height: 112,
+        alt: "Solutions Merchant Investments Logo",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary",
+    title: "About Solutions Merchant Investments",
+    description: "Diversified business solutions provider in Zimbabwe",
+  },
+};
+
 export default function AboutPage() {
   return (
     <div className="bg-white">

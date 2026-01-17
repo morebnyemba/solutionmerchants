@@ -4,6 +4,18 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 export const metadata: Metadata = {
   title: 'Privacy Policy - Solutions Merchant Investments',
   description: 'Privacy Policy for Solutions Merchant Investments - Learn how we collect, use, and protect your personal information.',
+  robots: "index, follow",
+  openGraph: {
+    title: 'Privacy Policy - Solutions Merchant Investments',
+    description: 'Our privacy policy explains how we handle your personal data',
+    type: 'website',
+    url: 'https://www.solutionsmerchants.co.zw/privacy-policy',
+  },
+  twitter: {
+    card: 'summary',
+    title: 'Privacy Policy',
+    description: 'How we protect your personal information',
+  },
 };
 
 export default function PrivacyPolicyPage() {

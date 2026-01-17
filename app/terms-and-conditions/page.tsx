@@ -4,6 +4,18 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 export const metadata: Metadata = {
   title: 'Terms and Conditions - Solutions Merchant Investments',
   description: 'Terms and Conditions for Solutions Merchant Investments - Read our terms of service and conditions for using our website and services.',
+  robots: "index, follow",
+  openGraph: {
+    title: 'Terms and Conditions - Solutions Merchant Investments',
+    description: 'Our terms and conditions for using our services',
+    type: 'website',
+    url: 'https://www.solutionsmerchants.co.zw/terms-and-conditions',
+  },
+  twitter: {
+    card: 'summary',
+    title: 'Terms and Conditions',
+    description: 'Terms of service for Solutions Merchant Investments',
+  },
 };
 
 export default function TermsAndConditionsPage() {

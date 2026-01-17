@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
+import type { Metadata } from 'next';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import ContactModal from '@/components/ContactModal';
@@ -270,6 +271,59 @@ export async function generateStaticParams() {
     slug: slug,
   }));
 }
+
+export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+  const service = servicesData[params.slug as ServiceSlug];
+  
+  if (!service) {
+    return {
+      title: 'Service Not Found',
+    };
+  }
+
+  const baseUrl = 'https://www.solutionsmerchants.co.zw';
+  const serviceUrl = `${baseUrl}/services/${params.slug}`;
+
+  return {
+    title: `${service.title} - Solutions Merchant Investments`,
+    description: service.description,
+    keywords: `${service.title}, business solutions, Zimbabwe, ${service.industries.join(', ')}`,
+    authors: [{ name: 'Solutions Merchant Investments' }],
+    openGraph: {
+      title: `${service.title} - Solutions Merchant Investments`,
+      description: service.description,
+      type: 'website',
+      url: serviceUrl,
+      siteName: 'Solutions Merchant Investments',
+      images: [
+        {
+          url: '/smslog.png',
+          width: 490,
+          height: 112,
+          alt: 'Solutions Merchant Investments Logo',
+        },
+        {
+          url: service.backgroundImage,
+          width: 1920,
+          height: 1280,
+          alt: service.title,
+        },
+      ],
+      locale: 'en_US',
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: `${service.title} - Solutions Merchant Investments`,
+      description: service.description,
+      images: ['/smslog.png'],
+    },
+    alternates: {
+      canonical: serviceUrl,
+    },
+    robots: 'index, follow',
+  };
+}
+
 
 export default function ServiceDetailPage({ params }: PageProps) {
   const service = servicesData[params.slug as ServiceSlug];
