@@ -10,11 +10,12 @@ export default function Footer() {
           {/* Company Info */}
           <div className="col-span-1 md:col-span-2">
             <h3 className="text-2xl font-bold text-primary-400 mb-4">
-              Solutions Merchants
+              Solutions Merchant Investments
             </h3>
             <p className="text-gray-300 mb-4">
-              Your trusted partner in delivering innovative solutions and exceptional services
-              to drive your business forward.
+              A diversified, solutions-oriented enterprise specializing in wholesale, retail, 
+              hardware supply, logistics, and multi-sector business solutions across Zimbabwe 
+              and international markets.
             </p>
           </div>
 
@@ -23,24 +24,19 @@ export default function Footer() {
             <h4 className="text-lg font-semibold mb-4">Quick Links</h4>
             <ul className="space-y-2">
               <li>
-                <Link href="/" className="text-gray-300 hover:text-primary-400 transition-colors">
-                  Home
-                </Link>
-              </li>
-              <li>
-                <Link href="/about" className="text-gray-300 hover:text-primary-400 transition-colors">
+                <a href="#about" className="text-gray-300 hover:text-primary-400 transition-colors">
                   About Us
-                </Link>
+                </a>
               </li>
               <li>
-                <Link href="/services" className="text-gray-300 hover:text-primary-400 transition-colors">
-                  Services
-                </Link>
+                <a href="#services" className="text-gray-300 hover:text-primary-400 transition-colors">
+                  Our Services
+                </a>
               </li>
               <li>
-                <Link href="/contact" className="text-gray-300 hover:text-primary-400 transition-colors">
-                  Contact
-                </Link>
+                <a href="#contact" className="text-gray-300 hover:text-primary-400 transition-colors">
+                  Contact Us
+                </a>
               </li>
             </ul>
           </div>
@@ -48,16 +44,59 @@ export default function Footer() {
           {/* Contact Info */}
           <div>
             <h4 className="text-lg font-semibold mb-4">Contact Us</h4>
-            <ul className="space-y-2 text-gray-300">
-              <li>Email: info@solutionmerchants.com</li>
-              <li>Phone: +1 (555) 123-4567</li>
-              <li>Address: 123 Business St, City, Country</li>
+            <ul className="space-y-2 text-gray-300 text-sm">
+              <li>
+                <strong>Address:</strong><br />
+                Subdivision R Homefield<br />
+                Mt Hampden, Zimbabwe
+              </li>
+              <li>
+                <strong>Zimbabwe:</strong><br />
+                <a href="tel:+263788699788" className="hover:text-primary-400">
+                  +263 7 88699788
+                </a>
+              </li>
+              <li>
+                <strong>International:</strong><br />
+                <a href="tel:+61466841679" className="hover:text-primary-400">
+                  +61 466 841 679
+                </a>
+              </li>
+              <li>
+                <strong>Email:</strong><br />
+                <a href="mailto:info@solutionsmerchants.co.zw" className="hover:text-primary-400">
+                  info@solutionsmerchants.co.zw
+                </a>
+              </li>
             </ul>
           </div>
         </div>
 
-        <div className="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
-          <p>&copy; {currentYear} Solutions Merchants. All rights reserved.</p>
+        <div className="border-t border-gray-700 mt-8 pt-8">
+          <div className="flex flex-col md:flex-row justify-between items-center">
+            <p className="text-gray-400 text-center md:text-left mb-4 md:mb-0">
+              &copy; {currentYear} Solutions Merchant Investments. All rights reserved.
+            </p>
+            <div className="flex space-x-4">
+              <a 
+                href="https://wa.me/61466841679" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-gray-400 hover:text-green-400 transition-colors"
+                aria-label="WhatsApp"
+              >
+                💬 WhatsApp
+              </a>
+              <a 
+                href="https://www.solutionsmerchants.co.zw" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-gray-400 hover:text-primary-400 transition-colors"
+              >
+                🌐 Website
+              </a>
+            </div>
+          </div>
         </div>
       </div>
     </footer>

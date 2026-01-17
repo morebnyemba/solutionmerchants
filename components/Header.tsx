@@ -11,23 +11,20 @@ export default function Header() {
       <nav className="container mx-auto px-4 py-4">
         <div className="flex justify-between items-center">
           <Link href="/" className="text-2xl font-bold text-primary-600">
-            Solutions Merchants
+            Solutions Merchant Investments
           </Link>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex space-x-8">
-            <Link href="/" className="text-gray-700 hover:text-primary-600 transition-colors">
-              Home
-            </Link>
-            <Link href="/about" className="text-gray-700 hover:text-primary-600 transition-colors">
+            <a href="#about" className="text-gray-700 hover:text-primary-600 transition-colors">
               About
-            </Link>
-            <Link href="/services" className="text-gray-700 hover:text-primary-600 transition-colors">
+            </a>
+            <a href="#services" className="text-gray-700 hover:text-primary-600 transition-colors">
               Services
-            </Link>
-            <Link href="/contact" className="text-gray-700 hover:text-primary-600 transition-colors">
+            </a>
+            <a href="#contact" className="text-gray-700 hover:text-primary-600 transition-colors">
               Contact
-            </Link>
+            </a>
           </div>
 
           {/* Mobile Menu Button */}
@@ -57,34 +54,27 @@ export default function Header() {
         {/* Mobile Navigation */}
         {isMenuOpen && (
           <div className="md:hidden mt-4 pb-4">
-            <Link
-              href="/"
-              className="block py-2 text-gray-700 hover:text-primary-600 transition-colors"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              Home
-            </Link>
-            <Link
-              href="/about"
+            <a
+              href="#about"
               className="block py-2 text-gray-700 hover:text-primary-600 transition-colors"
               onClick={() => setIsMenuOpen(false)}
             >
               About
-            </Link>
-            <Link
-              href="/services"
+            </a>
+            <a
+              href="#services"
               className="block py-2 text-gray-700 hover:text-primary-600 transition-colors"
               onClick={() => setIsMenuOpen(false)}
             >
               Services
-            </Link>
-            <Link
-              href="/contact"
+            </a>
+            <a
+              href="#contact"
               className="block py-2 text-gray-700 hover:text-primary-600 transition-colors"
               onClick={() => setIsMenuOpen(false)}
             >
               Contact
-            </Link>
+            </a>
           </div>
         )}
       </nav>
