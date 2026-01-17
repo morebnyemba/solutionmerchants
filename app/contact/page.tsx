@@ -52,10 +52,11 @@ export default function ContactPage() {
   };
 
   return (
-    <div className="bg-white">
+    <div className="bg-gradient-to-br from-blue-50 via-white to-orange-50">
       {/* Hero Section */}
-      <section className="bg-gradient-to-r from-primary-600 to-primary-800 text-white py-20">
-        <div className="container mx-auto px-4">
+      <section className="bg-gradient-to-r from-primary-600 to-primary-800 text-white py-20 relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-accent-500/10 to-transparent pointer-events-none"></div>
+        <div className="container mx-auto px-4 relative z-10">
           <h1 className="text-4xl md:text-5xl font-bold mb-6">Contact Us</h1>
           <p className="text-xl md:text-2xl text-primary-100 max-w-3xl">
             Ready to discuss your wholesale, logistics, or business needs? Get in touch with our team today.
@@ -64,11 +65,11 @@ export default function ContactPage() {
       </section>
 
       {/* Contact Form and Info */}
-      <section className="py-16 md:py-24">
+      <section className="py-16 md:py-24 relative">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             {/* Contact Form */}
-            <div>
+            <div className="glass-card glass-card-hover rounded-2xl p-8 shadow-xl">
               <h2 className="text-3xl font-bold text-gray-900 mb-6">Send Us a Message</h2>
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -198,7 +199,7 @@ export default function ContactPage() {
             </div>
 
             {/* Contact Information */}
-            <div>
+            <div className="glass-card glass-card-hover rounded-2xl p-8 shadow-xl">
               <h2 className="text-3xl font-bold text-gray-900 mb-6">Contact Information</h2>
               <div className="space-y-6">
                 <div className="flex items-start">
@@ -302,8 +303,11 @@ export default function ContactPage() {
                 </div>
               </div>
 
-              <div className="mt-8 p-6 bg-primary-50 rounded-lg">
-                <h3 className="font-semibold text-gray-900 mb-3">Quick Response</h3>
+              <div className="mt-8 p-6 bg-gradient-to-br from-accent-50 to-accent-100/50 rounded-xl border border-accent-200 glass-card">
+                <h3 className="font-semibold text-gray-900 mb-3 flex items-center">
+                  <span className="text-accent-600 mr-2">⚡</span>
+                  Quick Response
+                </h3>
                 <p className="text-gray-600">
                   We are committed to responding to all inquiries promptly. For immediate assistance, 
                   please contact us via WhatsApp or call our direct lines.

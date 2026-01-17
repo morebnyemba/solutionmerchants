@@ -67,7 +67,7 @@ export default function ContactModal({ trigger, isOpen, onOpenChange, serviceNam
   return (
     <Dialog open={isOpen} onOpenChange={onOpenChange}>
       {trigger && <DialogTrigger asChild>{trigger}</DialogTrigger>}
-      <DialogContent className="sm:max-w-[500px]">
+      <DialogContent className="sm:max-w-[500px] glass-modal-accent border-accent-400">
         <DialogHeader>
           <DialogTitle className="text-2xl font-bold text-gray-900">
             Get in Touch
