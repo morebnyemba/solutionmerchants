@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Mail, Phone, MapPin } from 'lucide-react';
+import ContactModal from '@/components/ContactModal';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -20,20 +21,16 @@ export default function Footer() {
               and international markets.
             </p>
             <div className="flex flex-wrap gap-3">
-              <Button 
-                asChild 
-                size="sm"
-                className="bg-green-600 hover:bg-green-700 text-white"
-              >
-                <a 
-                  href="https://wa.me/61466841679" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-2"
-                >
-                  💬 WhatsApp
-                </a>
-              </Button>
+              <ContactModal 
+                trigger={
+                  <Button 
+                    size="sm"
+                    className="bg-gradient-to-r from-accent-500 to-accent-600 hover:from-accent-600 hover:to-accent-700 text-white"
+                  >
+                    💬 Contact Us
+                  </Button>
+                }
+              />
               <Button 
                 asChild 
                 variant="outline" 
