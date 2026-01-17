@@ -7,6 +7,10 @@ export const metadata: Metadata = {
   title: "Solutions Merchant Investments - Wholesale, Retail & Business Solutions",
   description: "Leading broking company delivering reliable wholesale, retail, hardware supply, logistics, and multi-sector business solutions across Zimbabwe and international markets.",
   keywords: "wholesale Zimbabwe, hardware supply, commodity broking, logistics, supply chain management, real estate Zimbabwe, bulk trading",
+  icons: {
+    icon: "/favicon.ico",
+    apple: "/favicon-512.png",
+  },
   openGraph: {
     title: "Solutions Merchant Investments",
     description: "Trusted partner for wholesale, retail, hardware supply, and business solutions",
