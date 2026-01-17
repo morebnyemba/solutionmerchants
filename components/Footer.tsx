@@ -13,14 +13,13 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Company Info */}
           <div className="lg:col-span-2">
-            <Link href="/" className="block hover:opacity-80 transition-opacity">
+            <Link href="/" className="block hover:opacity-80 transition-opacity mb-4">
               <Image
                 src="/smslog.png"
                 alt="Solutions Merchant Investments Logo"
-                width={160}
-                height={105}
-                className="object-contain w-auto h-[60px]"
-                style={{ padding: 0, margin: 0 }}
+                width={147}
+                height={100}
+                className="object-contain h-16 w-auto"
               />
             </Link>
             <p className="text-gray-300 mb-6 leading-relaxed">

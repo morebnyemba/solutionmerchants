@@ -14,14 +14,14 @@ export default function Header() {
       <nav className="container mx-auto px-4 py-4">
         <div className="flex justify-between items-center">
           {/* Logo */}
-          <Link href="/" className="block hover:opacity-80 transition-opacity">
+          <Link href="/" className="block hover:opacity-80 transition-opacity -my-2">
             <Image
               src="/smslog.png"
               alt="Solutions Merchant Investments Logo"
-              width={160}
-              height={80}
-              className="object-contain w-auto h-[50px]"
-              style={{ padding: 0, margin: 0 }}
+              width={147}
+              height={100}
+              className="object-contain h-12 w-auto"
+              priority
             />
           </Link>
 
