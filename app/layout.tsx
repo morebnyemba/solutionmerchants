@@ -10,9 +10,10 @@ export const metadata: Metadata = {
   authors: [{ name: "Solutions Merchant Investments" }],
   creator: "Solutions Merchant Investments",
   publisher: "Solutions Merchant Investments",
-  robots: "index, follow",
-  viewport: "width=device-width, initial-scale=1",
-  charset: "utf-8",
+  robots: {
+    index: true,
+    follow: true,
+  },
   icons: {
     icon: "/favicon.ico",
     apple: "/favicon-512.png",
