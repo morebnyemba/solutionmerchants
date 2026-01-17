@@ -4,54 +4,63 @@ export default function Services() {
   const services = [
     {
       title: 'General Wholesale & Retail',
+      slug: 'wholesale-retail',
       description: 'Bulk procurement and distribution of goods, retail and wholesale supply to businesses, institutions, and contractors. Import and export of general merchandise.',
       icon: '🏪',
       details: ['Bulk procurement', 'Retail & wholesale supply', 'Import/export services']
     },
     {
       title: 'Hardware Wholesale',
+      slug: 'hardware-wholesale',
       description: 'Comprehensive supply of building materials, hand tools, power tools, plumbing, electrical supplies, cement, steel, timber, and roofing materials.',
       icon: '🔧',
       details: ['Building materials', 'Tools & equipment', 'Industrial supplies']
     },
     {
       title: 'Commodity Broking',
+      slug: 'commodity-broking',
       description: 'Agricultural and industrial commodity brokerage with market linkage, price negotiation, and trade coordination support.',
       icon: '📈',
       details: ['Agricultural commodities', 'Industrial commodities', 'Trade coordination']
     },
     {
       title: 'Transport & Logistics',
+      slug: 'transport-logistics',
       description: 'Freight coordination, warehousing, delivery management, and cross-border logistics solutions for efficient supply chain operations.',
       icon: '🚛',
       details: ['Freight coordination', 'Warehousing', 'Cross-border logistics']
     },
     {
       title: 'Supply Chain Management',
+      slug: 'supply-chain-management',
       description: 'End-to-end procurement, supplier coordination, inventory management, and logistics planning for cost optimization.',
       icon: '📦',
       details: ['Procurement services', 'Inventory management', 'Cost optimization']
     },
     {
       title: 'Tendering & Bulk Wholesaling',
+      slug: 'tendering-bulk-wholesaling',
       description: 'Participation in public and private tenders with contract-based procurement and fulfillment capabilities.',
       icon: '📋',
       details: ['Public tenders', 'Private contracts', 'Bulk fulfillment']
     },
     {
       title: 'Real Estate & Property',
+      slug: 'real-estate-property',
       description: 'Property acquisition and disposal, land sourcing, investment facilitation, and real estate trading partnerships.',
       icon: '🏢',
       details: ['Property acquisition', 'Land sourcing', 'Real estate trading']
     },
     {
       title: 'Money & Capital Markets',
+      slug: 'money-capital-markets',
       description: 'Capital sourcing and deal facilitation, investment structuring, advisory support, and financial partnerships.',
       icon: '💰',
       details: ['Capital sourcing', 'Investment structuring', 'Financial partnerships']
     },
     {
       title: 'General Dealership',
+      slug: 'general-dealership',
       description: 'Product and brand representation through authorized and independent dealerships with market development support.',
       icon: '🤝',
       details: ['Brand representation', 'Market development', 'Distribution networks']
@@ -73,22 +82,27 @@ export default function Services() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((service, index) => (
-            <div
+            <Link
               key={index}
-              className="bg-white p-8 rounded-lg shadow-md hover:shadow-xl transition-shadow"
+              href={`/services/${service.slug}`}
+              className="bg-white p-8 rounded-lg shadow-md hover:shadow-xl transition-all group cursor-pointer border-2 border-transparent hover:border-accent-500"
             >
-              <div className="text-5xl mb-4">{service.icon}</div>
-              <h3 className="text-xl font-bold text-gray-900 mb-3">{service.title}</h3>
+              <div className="text-5xl mb-4 group-hover:scale-110 transition-transform">{service.icon}</div>
+              <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-accent-600 transition-colors">{service.title}</h3>
               <p className="text-gray-600 mb-4">{service.description}</p>
               <ul className="space-y-1 mb-4">
                 {service.details.map((detail) => (
                   <li key={detail} className="text-sm text-gray-500 flex items-center">
-                    <span className="text-primary-600 mr-2">•</span>
+                    <span className="text-accent-500 mr-2">•</span>
                     {detail}
                   </li>
                 ))}
               </ul>
-            </div>
+              <div className="text-accent-600 font-semibold group-hover:text-accent-700 flex items-center">
+                Learn More 
+                <span className="ml-2 group-hover:translate-x-1 transition-transform">→</span>
+              </div>
+            </Link>
           ))}
         </div>
 

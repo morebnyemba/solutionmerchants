@@ -48,8 +48,8 @@ export default function About() {
           <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6">
             {values.map((value) => (
               <div key={value.title} className="text-center p-4">
-                <div className="bg-primary-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <span className="text-2xl font-bold text-primary-700">{value.title[0]}</span>
+                <div className="bg-accent-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 border-2 border-accent-500">
+                  <span className="text-2xl font-bold text-accent-700">{value.title[0]}</span>
                 </div>
                 <h4 className="text-lg font-bold text-gray-900 mb-2">{value.title}</h4>
                 <p className="text-sm text-gray-600">{value.description}</p>
