@@ -18,9 +18,9 @@ export default function Header() {
             <Image
               src="/smslog.png"
               alt="Solutions Merchant Investments Logo"
-              width={147}
-              height={100}
-              className="object-contain h-20 w-auto"
+              width={1228}
+              height={330}
+              className="object-contain h-16 w-auto"
               priority
             />
           </Link>

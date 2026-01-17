@@ -17,9 +17,9 @@ export default function Footer() {
               <Image
                 src="/smslog.png"
                 alt="Solutions Merchant Investments Logo"
-                width={147}
-                height={100}
-                className="object-contain h-24 w-auto"
+                width={1228}
+                height={330}
+                className="object-contain h-20 w-auto"
               />
             </Link>
             <p className="text-gray-300 mb-6 leading-relaxed">
