@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
-import { FaEnvelope, FaPhone, FaMapMarkerAlt } from 'react-icons/fa';
+import { FaEnvelope, FaPhone, FaMapMarkerAlt, FaComments, FaGlobe } from 'react-icons/fa';
 import ContactModal from '@/components/ContactModal';
 
 export default function Footer() {
@@ -25,9 +25,10 @@ export default function Footer() {
                 trigger={
                   <Button 
                     size="sm"
-                    className="bg-gradient-to-r from-accent-500 to-accent-600 hover:from-accent-600 hover:to-accent-700 text-white"
+                    className="bg-gradient-to-r from-accent-500 to-accent-600 hover:from-accent-600 hover:to-accent-700 text-white flex items-center gap-2"
                   >
-                    💬 Contact Us
+                    <FaComments className="w-4 h-4" />
+                    Contact Us
                   </Button>
                 }
               />
@@ -43,7 +44,8 @@ export default function Footer() {
                   rel="noopener noreferrer"
                   className="flex items-center gap-2"
                 >
-                  🌐 Website
+                  <FaGlobe className="w-4 h-4" />
+                  Website
                 </a>
               </Button>
             </div>

@@ -8,9 +8,23 @@ export default function ContactPage() {
     email: '',
     phone: '',
     company: '',
+    service: '',
     subject: '',
     message: '',
   });
+
+  const services = [
+    'General Wholesale & Retail',
+    'Hardware Wholesale',
+    'Commodity Broking',
+    'Transport & Logistics',
+    'Supply Chain Management',
+    'Tendering & Bulk Wholesaling',
+    'Real Estate & Property',
+    'Money & Capital Markets',
+    'General Dealership',
+    'Other',
+  ];
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -22,6 +36,7 @@ export default function ContactPage() {
       email: '',
       phone: '',
       company: '',
+      service: '',
       subject: '',
       message: '',
     });
@@ -68,7 +83,7 @@ export default function ContactPage() {
                       value={formData.name}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-600"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-600 transition-all"
                       placeholder="Your Name"
                     />
                   </div>
@@ -83,7 +98,7 @@ export default function ContactPage() {
                       value={formData.email}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-600"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-600 transition-all"
                       placeholder="your.email@example.com"
                     />
                   </div>
@@ -100,7 +115,7 @@ export default function ContactPage() {
                       name="phone"
                       value={formData.phone}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-600"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-600 transition-all"
                       placeholder="+1 (555) 123-4567"
                     />
                   </div>
@@ -114,10 +129,31 @@ export default function ContactPage() {
                       name="company"
                       value={formData.company}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-600"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-600 transition-all"
                       placeholder="Your Company"
                     />
                   </div>
+                </div>
+
+                <div>
+                  <label htmlFor="service" className="block text-gray-700 font-medium mb-2">
+                    Service of Interest *
+                  </label>
+                  <select
+                    id="service"
+                    name="service"
+                    value={formData.service}
+                    onChange={handleChange}
+                    required
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-600 bg-white transition-all"
+                  >
+                    <option value="">Select a service...</option>
+                    {services.map((service) => (
+                      <option key={service} value={service}>
+                        {service}
+                      </option>
+                    ))}
+                  </select>
                 </div>
 
                 <div>
@@ -131,7 +167,7 @@ export default function ContactPage() {
                     value={formData.subject}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-600"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-600 transition-all"
                     placeholder="How can we help you?"
                   />
                 </div>
@@ -147,12 +183,15 @@ export default function ContactPage() {
                     onChange={handleChange}
                     required
                     rows={6}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-600"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-600 transition-all resize-none"
                     placeholder="Tell us about your project or inquiry..."
                   />
                 </div>
 
-                <button type="submit" className="btn-primary w-full md:w-auto">
+                <button 
+                  type="submit" 
+                  className="btn-primary w-full md:w-auto px-8 py-3 shadow-lg hover:shadow-xl transition-all"
+                >
                   Send Message
                 </button>
               </form>
@@ -271,6 +310,31 @@ export default function ContactPage() {
                 </p>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Map Section */}
+      <section className="py-16 md:py-24 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-8">
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">Find Us</h2>
+            <p className="text-gray-600 max-w-2xl mx-auto">
+              Visit our office at Subdivision R Homefield, Mt Hampden, Zimbabwe
+            </p>
+          </div>
+          <div className="max-w-5xl mx-auto rounded-2xl overflow-hidden shadow-xl">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3798.5847!2d30.8800!3d-17.7200!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTfCsDQzJzEyLjAiUyAzMMKwNTInNDguMCJF!5e0!3m2!1sen!2szw!4v1234567890"
+              width="100%"
+              height="450"
+              style={{ border: 0 }}
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              className="w-full"
+              title="Solutions Merchant Investments Location"
+            />
           </div>
         </div>
       </section>

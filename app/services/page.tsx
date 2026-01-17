@@ -1,103 +1,92 @@
+import Link from 'next/link';
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import { Button } from '@/components/ui/button';
+import ContactModal from '@/components/ContactModal';
+import { 
+  FaStore, 
+  FaTools, 
+  FaChartLine, 
+  FaTruck, 
+  FaBoxes, 
+  FaClipboardList, 
+  FaBuilding, 
+  FaDollarSign, 
+  FaHandshake 
+} from 'react-icons/fa';
+import { IconType } from 'react-icons';
+
+interface Service {
+  title: string;
+  slug: string;
+  description: string;
+  Icon: IconType;
+  details: string[];
+}
+
 export default function ServicesPage() {
-  const services = [
+  const services: Service[] = [
     {
       title: 'General Wholesale & Retail',
+      slug: 'wholesale-retail',
       description: 'Bulk procurement and distribution of goods, retail and wholesale supply to businesses, institutions, and contractors. Import and export of general merchandise.',
-      features: [
-        'Bulk procurement and distribution',
-        'Retail and wholesale supply',
-        'Import and export services',
-        'Supply to contractors and institutions',
-      ],
-      icon: '🏪',
+      Icon: FaStore,
+      details: ['Bulk procurement', 'Retail & wholesale supply', 'Import/export services']
     },
     {
       title: 'Hardware Wholesale',
+      slug: 'hardware-wholesale',
       description: 'Comprehensive supply of building materials, hand tools, power tools, plumbing, electrical supplies, cement, steel, timber, and roofing materials.',
-      features: [
-        'Building and construction materials',
-        'Hand tools and power tools',
-        'Plumbing and electrical supplies',
-        'Cement, steel, timber, and roofing',
-      ],
-      icon: '🔧',
+      Icon: FaTools,
+      details: ['Building materials', 'Tools & equipment', 'Industrial supplies']
     },
     {
       title: 'Commodity Broking',
+      slug: 'commodity-broking',
       description: 'Agricultural and industrial commodity brokerage with market linkage, price negotiation, and trade coordination support.',
-      features: [
-        'Agricultural commodity brokerage',
-        'Industrial commodity brokerage',
-        'Market linkage and price negotiation',
-        'Trade coordination and settlement support',
-      ],
-      icon: '📈',
+      Icon: FaChartLine,
+      details: ['Agricultural commodities', 'Industrial commodities', 'Trade coordination']
     },
     {
       title: 'Transport & Logistics',
+      slug: 'transport-logistics',
       description: 'Freight coordination, warehousing, delivery management, and cross-border logistics solutions for efficient supply chain operations.',
-      features: [
-        'Freight coordination',
-        'Warehousing and delivery management',
-        'Cross-border logistics facilitation',
-        'Local logistics solutions',
-      ],
-      icon: '🚛',
+      Icon: FaTruck,
+      details: ['Freight coordination', 'Warehousing', 'Cross-border logistics']
     },
     {
       title: 'Supply Chain Management',
+      slug: 'supply-chain-management',
       description: 'End-to-end procurement, supplier coordination, inventory management, and logistics planning for cost optimization.',
-      features: [
-        'Procurement and supplier coordination',
-        'Inventory management',
-        'Distribution management',
-        'Cost optimization and logistics planning',
-      ],
-      icon: '📦',
+      Icon: FaBoxes,
+      details: ['Procurement services', 'Inventory management', 'Cost optimization']
     },
     {
       title: 'Tendering & Bulk Wholesaling',
+      slug: 'tendering-bulk-wholesaling',
       description: 'Participation in public and private tenders with contract-based procurement and fulfillment capabilities.',
-      features: [
-        'Public and private tenders',
-        'Bulk supply of goods and materials',
-        'Contract-based procurement',
-        'Fulfillment services',
-      ],
-      icon: '📋',
+      Icon: FaClipboardList,
+      details: ['Public tenders', 'Private contracts', 'Bulk fulfillment']
     },
     {
       title: 'Real Estate & Property',
+      slug: 'real-estate-property',
       description: 'Property acquisition and disposal, land sourcing, investment facilitation, and real estate trading partnerships.',
-      features: [
-        'Property acquisition and disposal',
-        'Land sourcing and investment facilitation',
-        'Real estate trading',
-        'Property partnerships',
-      ],
-      icon: '🏢',
+      Icon: FaBuilding,
+      details: ['Property acquisition', 'Land sourcing', 'Real estate trading']
     },
     {
       title: 'Money & Capital Markets',
+      slug: 'money-capital-markets',
       description: 'Capital sourcing and deal facilitation, investment structuring, advisory support, and financial partnerships.',
-      features: [
-        'Capital sourcing and deal facilitation',
-        'Investment structuring',
-        'Advisory support',
-        'Financial partnerships and funding linkages',
-      ],
-      icon: '💰',
+      Icon: FaDollarSign,
+      details: ['Capital sourcing', 'Investment structuring', 'Financial partnerships']
     },
     {
       title: 'General Dealership',
+      slug: 'general-dealership',
       description: 'Product and brand representation through authorized and independent dealerships with market development support.',
-      features: [
-        'Product and brand representation',
-        'Authorized and independent dealerships',
-        'Market development',
-        'Distribution networks',
-      ],
-      icon: '🤝',
+      Icon: FaHandshake,
+      details: ['Brand representation', 'Market development', 'Distribution networks']
     },
   ];
 
@@ -115,50 +104,90 @@ export default function ServicesPage() {
       </section>
 
       {/* Services Grid */}
-      <section className="py-16 md:py-24">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+      <section className="relative py-16 md:py-24 bg-gradient-to-b from-gray-50 via-white to-gray-50">
+        {/* Background decorative elements */}
+        <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-br from-primary-100/30 to-accent-100/20 rounded-full blur-3xl" />
+        <div className="absolute bottom-0 left-0 w-96 h-96 bg-gradient-to-tr from-accent-100/20 to-primary-100/30 rounded-full blur-3xl" />
+        
+        <div className="container relative mx-auto px-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {services.map((service, index) => (
-              <div
+              <Link
                 key={index}
-                className="bg-white p-8 rounded-lg shadow-md hover:shadow-xl transition-shadow border border-gray-200"
+                href={`/services/${service.slug}`}
+                className="group"
               >
-                <div className="flex items-start mb-4">
-                  <div className="text-5xl mr-4">{service.icon}</div>
-                  <div>
-                    <h3 className="text-2xl font-bold text-gray-900 mb-2">{service.title}</h3>
-                    <p className="text-gray-600">{service.description}</p>
-                  </div>
-                </div>
-                <div className="mt-6">
-                  <h4 className="font-semibold text-gray-900 mb-3">Key Features:</h4>
-                  <ul className="space-y-2">
-                    {service.features.map((feature, idx) => (
-                      <li key={idx} className="flex items-start">
-                        <span className="text-primary-600 mr-2">✓</span>
-                        <span className="text-gray-600">{feature}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
+                <Card className="h-full border-2 border-transparent hover:border-accent-500 transition-all hover:shadow-2xl hover:scale-105 bg-gradient-to-br from-white to-gray-50/50 backdrop-blur-sm">
+                  <CardHeader className="pb-4">
+                    <div className="text-accent-600 text-5xl mb-4 group-hover:scale-110 transition-transform">
+                      <service.Icon />
+                    </div>
+                    <CardTitle className="group-hover:text-accent-600 transition-colors">{service.title}</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <CardDescription className="text-gray-600 mb-4 text-base">
+                      {service.description}
+                    </CardDescription>
+                    <ul className="space-y-1 mb-6">
+                      {service.details.map((detail) => (
+                        <li key={detail} className="text-sm text-gray-500 flex items-center">
+                          <span className="text-accent-500 mr-2">•</span>
+                          {detail}
+                        </li>
+                      ))}
+                    </ul>
+                    <div className="text-accent-600 font-semibold group-hover:text-accent-700 flex items-center pt-2 border-t border-gray-100">
+                      Learn More 
+                      <span className="ml-2 group-hover:translate-x-1 transition-transform">→</span>
+                    </div>
+                  </CardContent>
+                </Card>
+              </Link>
             ))}
           </div>
         </div>
       </section>
 
-      {/* CTA Section */}
+      {/* Competitive Advantage Section */}
       <section className="py-16 md:py-24 bg-gray-50">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-            Ready to Partner With Us?
-          </h2>
-          <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
-            Contact us to discuss how our wholesale, retail, and business solutions can support your growth.
-          </p>
-          <a href="/#contact" className="btn-primary inline-block">
-            Contact Us Today
-          </a>
+        <div className="container mx-auto px-4">
+          <div className="rounded-2xl shadow-xl p-8 md:p-12 max-w-4xl mx-auto bg-gradient-to-br from-white via-primary-50/30 to-accent-50/20 border border-gray-100">
+            <h3 className="text-2xl font-bold text-gray-900 text-center mb-8">Our Competitive Advantage</h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+              <div className="flex items-start">
+                <span className="text-primary-600 text-xl mr-3">▸</span>
+                <p className="text-gray-700">Diversified operations reducing market risk</p>
+              </div>
+              <div className="flex items-start">
+                <span className="text-primary-600 text-xl mr-3">▸</span>
+                <p className="text-gray-700">Strong negotiation and brokerage expertise</p>
+              </div>
+              <div className="flex items-start">
+                <span className="text-primary-600 text-xl mr-3">▸</span>
+                <p className="text-gray-700">Large-volume and tender-based supply capability</p>
+              </div>
+              <div className="flex items-start">
+                <span className="text-primary-600 text-xl mr-3">▸</span>
+                <p className="text-gray-700">Integrated logistics and supply chain coordination</p>
+              </div>
+              <div className="flex items-start">
+                <span className="text-primary-600 text-xl mr-3">▸</span>
+                <p className="text-gray-700">Reliable partnerships and repeat clientele</p>
+              </div>
+            </div>
+            
+            {/* CTA Button */}
+            <div className="text-center pt-6 border-t border-gray-200">
+              <p className="text-gray-700 mb-4 text-lg">Need a custom solution? Let&apos;s discuss your requirements.</p>
+              <ContactModal 
+                trigger={
+                  <Button size="lg" className="bg-gradient-to-r from-primary-600 to-accent-600 hover:from-primary-700 hover:to-accent-700 text-white shadow-lg">
+                    Request a Consultation
+                  </Button>
+                }
+              />
+            </div>
+          </div>
         </div>
       </section>
     </div>
