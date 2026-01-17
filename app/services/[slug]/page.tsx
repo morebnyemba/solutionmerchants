@@ -1,5 +1,7 @@
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
+import { Button } from '@/components/ui/button';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 
 // Service data with detailed information
 const servicesData = {
@@ -245,12 +247,20 @@ export default function ServiceDetailPage({ params }: PageProps) {
   return (
     <div className="bg-white">
       {/* Hero Section */}
-      <section className="bg-gradient-to-r from-primary-600 to-primary-800 text-white py-20">
-        <div className="container mx-auto px-4">
+      <section className="relative bg-gradient-to-br from-primary-600 via-primary-700 to-primary-900 text-white py-24 overflow-hidden">
+        {/* Gradient overlay */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
+        {/* Decorative orbs */}
+        <div className="absolute top-10 right-10 w-64 h-64 bg-accent-500/20 rounded-full blur-3xl" />
+        <div className="absolute bottom-10 left-10 w-96 h-96 bg-primary-400/10 rounded-full blur-3xl" />
+        
+        <div className="container relative mx-auto px-4">
           <div className="max-w-4xl">
-            <div className="text-6xl mb-6">{service.icon}</div>
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">{service.title}</h1>
-            <p className="text-xl md:text-2xl text-primary-100">
+            <div className="text-7xl mb-6">{service.icon}</div>
+            <h1 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-white to-primary-50 bg-clip-text text-transparent">
+              {service.title}
+            </h1>
+            <p className="text-xl md:text-2xl text-primary-50/90 leading-relaxed">
               {service.description}
             </p>
           </div>
@@ -287,18 +297,22 @@ export default function ServiceDetailPage({ params }: PageProps) {
       </section>
 
       {/* Benefits Section */}
-      <section className="py-16 md:py-24">
+      <section className="py-16 md:py-24 bg-gradient-to-b from-white via-gray-50 to-white">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl font-bold text-gray-900 mb-8">Benefits</h2>
+            <h2 className="text-4xl font-bold mb-8 text-center bg-gradient-to-r from-primary-700 to-accent-600 bg-clip-text text-transparent">
+              Benefits
+            </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {service.benefits.map((benefit, index) => (
-                <div key={index} className="bg-accent-50 p-6 rounded-lg border border-accent-200">
-                  <div className="flex items-center mb-2">
-                    <span className="text-accent-600 text-2xl mr-2">●</span>
-                    <h3 className="text-lg font-semibold text-gray-900">{benefit}</h3>
-                  </div>
-                </div>
+                <Card key={index} className="bg-gradient-to-br from-white to-accent-50/30 border-accent-200 hover:shadow-lg transition-shadow">
+                  <CardContent className="pt-6">
+                    <div className="flex items-center mb-2">
+                      <span className="text-accent-600 text-2xl mr-2">●</span>
+                      <h3 className="text-lg font-semibold text-gray-900">{benefit}</h3>
+                    </div>
+                  </CardContent>
+                </Card>
               ))}
             </div>
           </div>
@@ -325,27 +339,29 @@ export default function ServiceDetailPage({ params }: PageProps) {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 md:py-24 bg-accent-500">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
+      <section className="relative py-20 md:py-28 bg-gradient-to-br from-accent-500 via-accent-600 to-accent-700 overflow-hidden">
+        {/* Decorative elements */}
+        <div className="absolute top-0 left-0 w-96 h-96 bg-white/10 rounded-full blur-3xl" />
+        <div className="absolute bottom-0 right-0 w-96 h-96 bg-primary-600/20 rounded-full blur-3xl" />
+        
+        <div className="container relative mx-auto px-4 text-center">
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
             Ready to Get Started?
           </h2>
-          <p className="text-xl text-white mb-8 max-w-2xl mx-auto">
+          <p className="text-xl text-white/90 mb-10 max-w-2xl mx-auto">
             Contact us today to discuss how our {service.title.toLowerCase()} services can support your business growth.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link
-              href="/#contact"
-              className="bg-white text-accent-600 px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition-colors inline-block"
-            >
-              Contact Us
-            </Link>
-            <Link
-              href="/services"
-              className="bg-transparent border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-accent-600 transition-colors inline-block"
-            >
-              View All Services
-            </Link>
+            <Button asChild size="lg" className="bg-white text-accent-700 hover:bg-gray-100 shadow-xl hover:shadow-2xl">
+              <Link href="/#contact">
+                Contact Us
+              </Link>
+            </Button>
+            <Button asChild variant="outline" size="lg" className="border-2 border-white text-white hover:bg-white/10 backdrop-blur-sm">
+              <Link href="/services">
+                View All Services
+              </Link>
+            </Button>
           </div>
         </div>
       </section>

@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 
 export default function Services() {
   const services = [
@@ -68,10 +69,14 @@ export default function Services() {
   ];
 
   return (
-    <section id="services" className="py-16 md:py-24 bg-gray-50">
-      <div className="container mx-auto px-4">
+    <section id="services" className="relative py-16 md:py-24 bg-gradient-to-b from-gray-50 via-white to-gray-50">
+      {/* Background decorative elements */}
+      <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-br from-primary-100/30 to-accent-100/20 rounded-full blur-3xl" />
+      <div className="absolute bottom-0 left-0 w-96 h-96 bg-gradient-to-tr from-accent-100/20 to-primary-100/30 rounded-full blur-3xl" />
+      
+      <div className="container relative mx-auto px-4">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4">
+          <h2 className="text-4xl md:text-6xl font-bold mb-4 bg-gradient-to-r from-gray-900 via-primary-800 to-gray-900 bg-clip-text text-transparent">
             Our Services
           </h2>
           <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
@@ -85,29 +90,37 @@ export default function Services() {
             <Link
               key={index}
               href={`/services/${service.slug}`}
-              className="bg-white p-8 rounded-lg shadow-md hover:shadow-xl transition-all group cursor-pointer border-2 border-transparent hover:border-accent-500"
+              className="group"
             >
-              <div className="text-5xl mb-4 group-hover:scale-110 transition-transform">{service.icon}</div>
-              <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-accent-600 transition-colors">{service.title}</h3>
-              <p className="text-gray-600 mb-4">{service.description}</p>
-              <ul className="space-y-1 mb-4">
-                {service.details.map((detail) => (
-                  <li key={detail} className="text-sm text-gray-500 flex items-center">
-                    <span className="text-accent-500 mr-2">•</span>
-                    {detail}
-                  </li>
-                ))}
-              </ul>
-              <div className="text-accent-600 font-semibold group-hover:text-accent-700 flex items-center">
-                Learn More 
-                <span className="ml-2 group-hover:translate-x-1 transition-transform">→</span>
-              </div>
+              <Card className="h-full border-2 border-transparent hover:border-accent-500 transition-all hover:shadow-2xl hover:scale-105 bg-gradient-to-br from-white to-gray-50/50 backdrop-blur-sm">
+                <CardHeader className="pb-4">
+                  <div className="text-5xl mb-4 group-hover:scale-110 transition-transform">{service.icon}</div>
+                  <CardTitle className="group-hover:text-accent-600 transition-colors">{service.title}</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <CardDescription className="text-gray-600 mb-4 text-base">
+                    {service.description}
+                  </CardDescription>
+                  <ul className="space-y-1 mb-6">
+                    {service.details.map((detail) => (
+                      <li key={detail} className="text-sm text-gray-500 flex items-center">
+                        <span className="text-accent-500 mr-2">•</span>
+                        {detail}
+                      </li>
+                    ))}
+                  </ul>
+                  <div className="text-accent-600 font-semibold group-hover:text-accent-700 flex items-center pt-2 border-t border-gray-100">
+                    Learn More 
+                    <span className="ml-2 group-hover:translate-x-1 transition-transform">→</span>
+                  </div>
+                </CardContent>
+              </Card>
             </Link>
           ))}
         </div>
 
         {/* Competitive Advantage Section */}
-        <div className="mt-16 bg-white rounded-lg shadow-md p-8 md:p-12 max-w-4xl mx-auto">
+        <div className="mt-16 rounded-2xl shadow-xl p-8 md:p-12 max-w-4xl mx-auto bg-gradient-to-br from-white via-primary-50/30 to-accent-50/20 border border-gray-100">
           <h3 className="text-2xl font-bold text-gray-900 text-center mb-8">Our Competitive Advantage</h3>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div className="flex items-start">
