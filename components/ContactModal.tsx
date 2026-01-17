@@ -16,25 +16,39 @@ interface ContactModalProps {
   trigger?: React.ReactNode;
   isOpen?: boolean;
   onOpenChange?: (open: boolean) => void;
+  serviceName?: string;
 }
 
-export default function ContactModal({ trigger, isOpen, onOpenChange }: ContactModalProps) {
+export default function ContactModal({ trigger, isOpen, onOpenChange, serviceName }: ContactModalProps) {
   const [selectedOption, setSelectedOption] = useState<string | null>(null);
 
   const handleWhatsApp = () => {
-    const message = encodeURIComponent(
-      "Hello Solutions Merchant Investments, I'm interested in learning more about your services."
-    );
-    const whatsappUrl = `https://wa.me/61466841679?text=${message}`;
+    let message = "Hello Solutions Merchant Investments,\n\nI am contacting you from your website";
+    
+    if (serviceName) {
+      message += ` regarding your ${serviceName} services`;
+    }
+    
+    message += ". I'm interested in learning more about your services.\n\nBest regards";
+    
+    const whatsappUrl = `https://wa.me/61466841679?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, '_blank');
   };
 
   const handleEmail = () => {
-    const subject = encodeURIComponent('Inquiry about Solutions Merchant Investments Services');
-    const body = encodeURIComponent(
-      'Hello Solutions Merchant Investments,\n\nI am interested in learning more about your services.\n\nBest regards'
-    );
-    const mailtoUrl = `mailto:info@solutionsmerchants.co.zw?subject=${subject}&body=${body}`;
+    const subject = serviceName 
+      ? `Website Inquiry: ${serviceName}` 
+      : 'Website Inquiry: Solutions Merchant Investments Services';
+    
+    let body = "Hello Solutions Merchant Investments,\n\nI am contacting you from your website";
+    
+    if (serviceName) {
+      body += ` regarding your ${serviceName} services`;
+    }
+    
+    body += ". I am interested in learning more about your services.\n\nBest regards";
+    
+    const mailtoUrl = `mailto:info@solutionsmerchants.co.zw?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
     window.location.href = mailtoUrl;
   };
 

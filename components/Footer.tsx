@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
-import { Mail, Phone, MapPin } from 'lucide-react';
+import { FaEnvelope, FaPhone, FaMapMarkerAlt } from 'react-icons/fa';
 import ContactModal from '@/components/ContactModal';
 
 export default function Footer() {
@@ -81,7 +81,7 @@ export default function Footer() {
             <h4 className="text-lg font-semibold mb-4 text-primary-400">Contact Us</h4>
             <ul className="space-y-3 text-gray-300 text-sm">
               <li className="flex items-start gap-2">
-                <MapPin className="w-4 h-4 mt-1 text-accent-500 flex-shrink-0" />
+                <FaMapMarkerAlt className="w-4 h-4 mt-1 text-accent-500 flex-shrink-0" />
                 <div>
                   <strong className="text-white">Address:</strong><br />
                   Subdivision R Homefield<br />
@@ -89,7 +89,7 @@ export default function Footer() {
                 </div>
               </li>
               <li className="flex items-start gap-2">
-                <Phone className="w-4 h-4 mt-1 text-accent-500 flex-shrink-0" />
+                <FaPhone className="w-4 h-4 mt-1 text-accent-500 flex-shrink-0" />
                 <div>
                   <strong className="text-white">Zimbabwe:</strong><br />
                   <a href="tel:+263788699788" className="hover:text-primary-400 transition-colors">
@@ -98,7 +98,7 @@ export default function Footer() {
                 </div>
               </li>
               <li className="flex items-start gap-2">
-                <Phone className="w-4 h-4 mt-1 text-accent-500 flex-shrink-0" />
+                <FaPhone className="w-4 h-4 mt-1 text-accent-500 flex-shrink-0" />
                 <div>
                   <strong className="text-white">International:</strong><br />
                   <a href="tel:+61466841679" className="hover:text-primary-400 transition-colors">
@@ -107,7 +107,7 @@ export default function Footer() {
                 </div>
               </li>
               <li className="flex items-start gap-2">
-                <Mail className="w-4 h-4 mt-1 text-accent-500 flex-shrink-0" />
+                <FaEnvelope className="w-4 h-4 mt-1 text-accent-500 flex-shrink-0" />
                 <div>
                   <strong className="text-white">Email:</strong><br />
                   <a href="mailto:info@solutionsmerchants.co.zw" className="hover:text-primary-400 transition-colors">

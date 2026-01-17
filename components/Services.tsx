@@ -1,5 +1,7 @@
 import Link from 'next/link';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import { Button } from '@/components/ui/button';
+import ContactModal from '@/components/ContactModal';
 import { 
   FaStore, 
   FaTools, 
@@ -144,7 +146,7 @@ export default function Services() {
         {/* Competitive Advantage Section */}
         <div className="mt-16 rounded-2xl shadow-xl p-8 md:p-12 max-w-4xl mx-auto bg-gradient-to-br from-white via-primary-50/30 to-accent-50/20 border border-gray-100">
           <h3 className="text-2xl font-bold text-gray-900 text-center mb-8">Our Competitive Advantage</h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
             <div className="flex items-start">
               <span className="text-primary-600 text-xl mr-3">▸</span>
               <p className="text-gray-700">Diversified operations reducing market risk</p>
@@ -165,6 +167,18 @@ export default function Services() {
               <span className="text-primary-600 text-xl mr-3">▸</span>
               <p className="text-gray-700">Reliable partnerships and repeat clientele</p>
             </div>
+          </div>
+          
+          {/* CTA Button */}
+          <div className="text-center pt-6 border-t border-gray-200">
+            <p className="text-gray-700 mb-4 text-lg">Need a custom solution? Let&apos;s discuss your requirements.</p>
+            <ContactModal 
+              trigger={
+                <Button size="lg" className="bg-gradient-to-r from-primary-600 to-accent-600 hover:from-primary-700 hover:to-accent-700 text-white shadow-lg">
+                  Request a Consultation
+                </Button>
+              }
+            />
           </div>
         </div>
       </div>

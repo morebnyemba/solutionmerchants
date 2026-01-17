@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import ContactModal from '@/components/ContactModal';
 import { 
   FaStore, 
   FaTools, 
@@ -395,11 +396,14 @@ export default function ServiceDetailPage({ params }: PageProps) {
             Contact us today to discuss how our {service.title.toLowerCase()} services can support your business growth.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button asChild size="lg" className="bg-white text-accent-700 hover:bg-gray-100 shadow-xl hover:shadow-2xl">
-              <Link href="/contact">
-                Contact Us
-              </Link>
-            </Button>
+            <ContactModal 
+              serviceName={service.title}
+              trigger={
+                <Button size="lg" className="bg-white text-accent-700 hover:bg-gray-100 shadow-xl hover:shadow-2xl">
+                  Contact Us
+                </Button>
+              }
+            />
             <Button asChild variant="outline" size="lg" className="border-2 border-white text-white hover:bg-white/10 backdrop-blur-sm">
               <Link href="/services">
                 View All Services
