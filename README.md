@@ -49,6 +49,15 @@ npm run build
 npm start
 ```
 
+## Deployment on Namecheap cPanel
+
+For detailed step-by-step instructions on deploying this website to Namecheap cPanel hosting, see the **[DEPLOYMENT_GUIDE.md](./DEPLOYMENT_GUIDE.md)**.
+
+### Quick Deployment Steps:
+1. Run `npm run build` to generate static files in the `out` folder
+2. Upload contents of `out` folder to your cPanel `public_html` directory
+3. Configure SSL and verify your site is working
+
 ## Project Structure
 
 ```
